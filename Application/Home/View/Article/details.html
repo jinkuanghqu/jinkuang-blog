@@ -1,0 +1,32 @@
+<section class="content-wrap">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8 main-content">
+                <article class="post">
+                    <notempty name="articleDetails">
+                        <div class="post-head">
+                            <h1 class="post-title">{{$articleDetails.title}}</h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="/" target="_blank">{{$articleDetails.author}}</a></span> • 
+                                <time class="post-date" datetime="{{$articleDetails.add_time|date="Y-m-d",###}}" title="{{$articleDetails.add_time|date="Y-m-d",###}}">{{$articleDetails.add_time|date="Y-m-d",###}}</time>
+                            </div>
+                        </div>
+                        <neq name="articleDetails.thumbnail" value="">
+                            <div class="featured-media">
+                                <img src="/{{$articleDetails.thumbnail}}" alt="{{$articleDetails.title}}" style="max-height:260px;"/>
+                            </div>
+                        </neq>
+                        <div class="post-content">
+                            {{$articleDetails.content}}
+                        </div>
+                    <else/>
+                        对不起，没有你要找的相关内容
+                    </notempty>
+                </article>
+            </main>
+            <aside class="col-md-4 sidebar">
+                {{:W('RightSiderArticle/newArticle')}}
+            </aside>
+        </div>
+    </div>
+</section>

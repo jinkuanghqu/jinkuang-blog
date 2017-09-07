@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;分类管理
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/Article/add')}}" class="btn btn-success">添加</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        {{$th_str}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <foreach name="arts" item="vo">
+                                        <tr class="ng-scope">
+                                            <td>
+                                                <div class="center"><span class="ng-binding">{{$vo.name}}</span></div>
+                                            </td>
+                                            <td>
+                                                <div class="center"><span class="ng-binding">{{$vo.title}}</span></div>
+                                            </td>
+                                            <td>
+                                                <div class="center"><span class="ng-binding">{{$vo.add_time|date='Y-m-d H:i:s',###}}</span></div>
+                                            </td>
+                                            <td>
+                                                <input name="sort" style="width:60px;" class="inputorder" type="number" value="{{$vo.sort}}" val="{{$vo.id}}" />                                
+
+                                            </td>
+                                            <td>
+                                                <div class="left">
+                                                    <a href="/Admin/Article/edit?id={{$vo.id}}" class="btn btn-sm btn-info">修改</a>
+                                                    <a href="/Admin/Article/delete?id={{$vo.id}}" class="btn btn-sm btn-info" id="del" onclick="if(!confirm('确认删除？')){return false;}">删除</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </foreach>
+                                </tbody>
+                            </table>
+                            <include file="Common/page" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+
+$(function() {
+    $(".inputorder").change(function() {
+        var id = $(this).attr('val');
+        var sort = $(this).val();
+        if (sort && id) {
+            $.post("{{:U('/admin/Article/updateSort')}}", {
+                id: id,
+                sort: sort
+            }, function(data) {
+                if (data == 1) {
+                    window.location.reload(true);
+                }
+            });
+        }
+    })
+})
+</script>

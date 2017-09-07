@@ -1,0 +1,50 @@
+<script src="__PUBLIC__/adminTpl/js/Validator/bootstrap3-validation.js"></script>
+
+
+<div class="ng-isolate-scope mt50">
+    <form class="form-horizontal" action="/Admin/Sdcategory/edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{$item.id}}">
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">分类名称</label>
+            <div class="col-sm-8">
+                <input class="form-control" check-type="required" name="name" id="name" value="{{$item.name}}" placeholder="输入分类名称">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label">分类描述</label>
+            <div class="col-sm-8">
+                <input class="form-control" check-type="required" name="desc" id="desc" value="{{$item.desc}}" placeholder="该分类的描述">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="max_number" class="col-sm-2 control-label">显示数量</label>
+            <div class="col-sm-8">
+                <input class="form-control" check-type="required;number" name="max_number" id="max_number" value="{{$item.max_number}}" placeholder="前台显示该分类的商品数量">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button i="close" class="btn btn-default">取消</button>
+                <button id="submit" type="submit" class="btn btn-primary" style="margin-left: 20px">确认</button>
+            </div>
+         </div>
+    </form>
+</div>
+
+<style>
+strong{ min-width:200px;}
+</style>
+
+<script>
+    $(function(){
+        $("form").validation();
+        $("button[type='submit']").on('click', function(event){
+            if ($("form").valid(this, "error!")==false) {
+                return false;
+            }
+        });
+    });
+</script>

@@ -1,0 +1,14 @@
+.name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; course: hand; }
+
+.pdContainer .column .proDetailMid .proDetailCon .tabCon{
+    width: 910px;
+    padding: 20px;
+}
+
+.cartContainer .purConfirm .dl .dd .m_box .ship_r .selGroup .sonMenu{
+    width: 450px;
+}
+
+.cartContainer .purConfirm .dl .dd .m_box .ship_r .selGroup .sonMenu .span1{
+    width: auto;
+}

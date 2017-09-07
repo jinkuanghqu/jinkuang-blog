@@ -1,0 +1,30 @@
+<include file="Common/header" />
+
+    <body>
+        <!-- header  -->
+        <div class="viewFramework-topbar ng-scope">
+    <!-- topbar -->
+    <include file="Common/topbar" />
+    <!-- /topbar -->
+</div>
+        <!-- /header  -->
+
+        <div id='sidebar-left' class="viewFramework-body viewFramework-sidebar-full">
+            <include file="Common/sidebar" />
+
+            <div id='sidebal-middle' class="viewFramework-product">
+
+                <include file="Common/productNavBar" />
+
+                <div class="viewFramework-product-body" id="mainFrameBody" >
+                    <!-- product body -->
+                    {__CONTENT__}
+                    <!-- /product body -->
+                </div>
+                <div class="copy">
+                    <span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+                </div>
+            </div>
+        </div>
+
+<include file="Common/footer" />

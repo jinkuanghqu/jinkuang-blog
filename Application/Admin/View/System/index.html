@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+                <i class="glyphicon glyphicon-tags"></i> <code></code>
+                系统类型的变量不可以被删除！
+            </div>
+    </div>
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;自定义变量
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">                        
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/System/add')}}" class="btn btn-success">添加</a>
+                        </div>                        
+                        <div class="col-sm-12">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="center">变量说明</th>
+                                        <th class="center">变量名称</th>
+                                        <th class="center">调用说明</th>
+                                        <th class="center">变量值</th>
+                                        <th class="center">变量类型</th>
+                                        <th class="center">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <volist name="settingRows" id="vo">
+                                   <tr class="info">
+                                       <td>{{$vo.description}}</td>
+                                       <td>{{$vo.key}}</td>
+                                       <td><kbd>{<kbd>{</kbd>$Think.CONFIG.{{$vo.key}}<kbd>}</kbd>}</kbd></td>
+                                       <td>{{$vo.value}}</td>
+                                       <td>
+                                         <if condition="$vo['type'] == 0">
+                                          <span class="label label-success">系统</span>
+                                         <else />
+                                           <span class="label label-danger">自定义</span>
+                                         </if>
+                                       </td>
+                                       <td>
+                                          <if condition="$vo['type'] == 1">
+                                            <a href="javascript:void(0);" data-ajax="{{:U('/Admin/System/destroy',array('id'=>$vo['key']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                          </if>
+                                           <a href="{{:U('/Admin/System/edit',array('id'=>$vo['key']))}}" class="btn btn-sm btn-info">修改</a>
+                                       </td>
+                                   </tr>
+                                   </volist>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

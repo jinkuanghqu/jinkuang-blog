@@ -1,0 +1,162 @@
+<style media="screen">
+    .table {
+        width:600px;
+        font-size:16px;
+        border: 1px solid #717070;
+        border-collapse: collapse;
+        text-align: center;
+        color: #717070;
+    }
+    .table tr {
+        height: 40px;
+    }
+    .table td {
+        border: 1px solid #717070;
+    }
+
+</style>
+<div class="vipContainer">
+    <div class="min_width">
+        <p class="breadNav">
+            <a href="javascript:">Home</a> &gt;
+            <a href="{{:U('UserCenter/index')}}">My SinoB2B</a> &gt;
+            <a href="javascript:" class="active">VIP Club</a>
+        </p>
+        <if condition="$logon eq true">
+        <p class="dt"><strong class="f20">VIP Club</strong></p>
+        <div class="person_panel clearfix" style="width:1165px">
+            <p class="avStar f_left"></p>
+            <div class="rightInfo f_left">
+                <p class="name" style="color:#FFF">Hello! <a href="javascript:" style="color:#FFF">{{$userInfo.first_name}}&nbsp;{{$userInfo.last_name}}</a> <if condition="$vipIsVia['level'] == 0">
+                <i class="icon "></i>
+                    <else />
+                <i class="icon active"></i>
+                </if></p>
+                <div class="progBar">
+                    <p class="status" style="width: <php>echo $vipIsVia['amount']/5000 * 100;</php>%;"><strong class="f12">{{$vipIsVia['amount']}}</strong></p>
+                </div>
+               <div class="bottom clearfix">
+               <if condition="$vipIsVia['level'] == 0">
+                   <p class="f_left start">
+                       <span class="tangle"></span>
+                       <strong>$ 0</strong>
+                   </p>
+                   <p class="f_left f14 text">Short growth of $<php>echo 3000-$vipIsVia['amount'];</php> spending to be upgraded for VIP</p>
+                   <p class="f_right end">
+                        <span class="tangle"></span>
+                        <strong>$ 3000</strong>
+                   </p>
+               <else />
+                    <p class="f_left start">
+                       <span class="tangle"></span>
+                       <strong>$ 3001</strong>
+                   </p>
+                   <p class="f_left f14 text">Short growth of $<php>echo 5000-$vipIsVia['amount'];</php> spending to be upgraded for VIP</p>
+                   <p class="f_right end">
+                        <span class="tangle"></span>
+                        <strong>$ 5000</strong>
+                   </p>
+               </if>
+               </div>
+            </div>
+            <div class="f_left" style="font-size: 15px;color: #f6f6f6;padding-top: 50px;margin-left: 105px;">
+                <p>Once your total spending reaches $ 3,000 USD within 90 days,</p>
+                <p>you will be upgraded to VIP membership from the date the target was achieved.</p>
+            </div>
+        </div>
+        </if>
+        <!-- 下面内容-->
+        <div class="notice">
+            <div class="li-group clearfix">
+                    <p class="dt" style="text-align:center;color:#fa8218;">VIP CLUB INTRODUCTION</p>
+            </div>
+            <div class="li-group clearfix">
+                <span class="icon icon1 f_left"></span>
+                <div class="dl f_left">
+                    <p class="dt">VIP Membership Eligible Requiremengts:</p>
+                    <div class="list">
+                        <p>Once user's total spending reaches $ 3,000 USD within 90 days, you will be up graded to</p>
+                        <p>VIP membership from the date the target was achieved. User are able to maintain their</p>
+                        <p>spending targets to maintain their VIP status otherwise downgrade will follow and</p>
+                        <p>privileges will be removed. After 1 year of VIP status completion, to maintain the current</p>
+                        <p>status, users are require to attain $ 5,000 USD spending within a year.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+            <div class="li-group clearfix">
+                <span class="icon icon2 f_left"></span>
+                <div class="dl f_left">
+                    <p class="dt">VIP Membership Privileges:</p>
+                    <div class="list">
+                        <p>1.  VIP Discount-Entitled to use VIP discount on top of normal promotions</p>
+                        <p>2.  VIP members are entitled to senior customer service direct inquiries, 24 hours phone </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;and mail respond services. Consultation respond within an hour.</p>
+                        <p>3.  VIP status members are also entitled to full tracking services by our staff, once any </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;conditions are sighted as high risk or may bearthreats to your orders, immediate</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;adjustment will be taken to avoid further risks or damages.</p>
+                        <p>4.  VIP members will be placed on priority for disputes and will be responded within 24</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;hours, if not able to be resolved, disputes will be escalated and placed on priority to be </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;resolved in less than 3 days.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+            <div class="li-group clearfix">
+                <div class="dl f_left">
+                    <table class="table">
+                        <tr>
+                            <th colspan="3">Comparison</th>
+                        </tr>
+                        <tr>
+                            <td>Service</td>
+                            <td>VIP Member</td>
+                            <td>Normal Member</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>VIP Discount</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>24 hrs Online Service</td>
+                            <td>√</td>
+                            <td>√</td>
+                        </tr>
+                        <tr>
+                            <td>Phone or Mail service</td>
+                            <td>Immediate-</td>
+                            <td>Within 24 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Senior Advisory Service</td>
+                            <td>√</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Online Consultation</td>
+                            <td>1 hours</td>
+                            <td>3 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Order Tracking Services</td>
+                            <td>Full Tracking</td>
+                            <td>Full Tracking</td>
+                        </tr>
+                        <tr>
+                            <td>Dispute Handling</td>
+                            <td>Within 24 hours</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Dispute Escalation</td>
+                            <td>3 days</td>
+                            <td>7 days</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="m-col-r f_right width950">
+    <div class="sec-box">
+        <p class="dt dt1">Security Center</p>
+        <div class="sec-home-dl">
+            <!-- 修改密码-->
+            <div class="sec_email_progress bar1">
+                <span class="status1 status">Verify Identity</span>
+                <span class="status2 status">Reset Mailbox</span>
+                <span class="status3 status">Complete</span>
+            </div>
+            <!-- form-->
+            <form id="formData" class="form email" data-validator-option="{stopOnError:false, timely:true}" action="{{:U('Home/AccountSet/resetMailBox')}}" method="post">
+                <div class="inputBox clearfix margin_top10" >
+                    <label for="">Password:</label>
+                    <div class="form-dl">
+                        <input type="password" class="input" id="password" name="password" placeholder="Please input the password" data-rule="required;password">
+                    </div>
+                    <!-- 错误提示-->
+                    <span class="msg-box" for="password"></span>
+                </div>
+                <div class="inputBox clearfix margin_top10">
+                    <label for="">Please enter a new mailbox:</label>
+                    <div class="form-dl">
+                        <input type="text" class="input" name="email" id="email" data-rule="required;email;remote[/Member/checkEmail]" placeholder="Please enter your email address">
+                    </div>
+                    <span class="msg-box" for="email"></span>
+                </div>
+                <div class="inputBox clearfix margin_top10">
+                    <label for="">Verification code:</label>
+                    <div class="form-dl">
+                        <input type="text" class="input" id="verification" name="verification" value="" data-rule="required;remote[/Member/checkVerify]" placeholder="Please enter the verification code">
+                    </div>
+                    <span class="msg-box" for="verification"></span>
+
+                    <a href="javascript:"  class="f_left margin_left10" onclick="javascript:$('#changeImg').attr('src','{{:U('Member/verify')}}');">
+                        <img id="changeImg" src="{{:U('Member/verify')}}" alt="" height="26" width="90"/>
+                    </a>
+                </div>
+
+
+                <div class="inputBox clearfix margin_top30">
+                    <label for=""> &nbsp;</label>
+                    <div class="form-dl">
+                        <button class="submit yellow_btn yellow_btn17">Next Page</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#formData").validator({
+        messages:{
+            required : "Not null",
+        }
+    })    
+</script>

@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;后台菜单
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row">                        
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/Menu/add')}}" class="btn btn-success">添加</a>
+                        </div>
+                        <form action="{{:U('/Admin/Menu/destroy')}}" class="form-horizontal checkbox-del">
+                            <div class="col-sm-12 panel-scroll">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"><input class="check-all" type="checkbox" value=""></th>
+                                            <th class="center">菜单名称</th>
+                                            <th class="center">链接</th>
+                                            <th class="center">ICON</th>
+                                            <th class="center">是否菜单</th>
+                                            <th class="center">排序</th>
+                                            <th class="center">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>                
+                                        <volist name="authRuleAll" id="authRuleRows">              
+                                        <tr class="success">                                       
+                                            <td><input class="ids" type="checkbox" name="id[]" value="{{$authRuleRows.id}}"></td>
+                                            <td class="text-left">{{$authRuleRows.title}}</td>
+                                            <td>
+                                                {{$authRuleRows.name}}
+                                            </td>
+                                            <td><i class="{{$authRuleRows.icon}}"></i></td>
+                                            <td>
+                                                <if condition="$authRuleRows.islink == 0">
+                                                <span class="label label-danger">否</span>
+                                                <else />
+                                                <span class="label label-success">是</span>
+                                                </if>
+                                            </td>
+                                            <td><input type="text" class="input-sort input-ajax-submit" data-ajax="{{:U('/Admin/Menu/sort',array('id'=>$authRuleRows['id']))}}" value="{{$authRuleRows.sort}}" /></td>
+                                            <td>
+                                                <a href="{{:U('/Admin/Menu/edit',array('id'=>$authRuleRows['id']))}}" class="btn btn-sm btn-info">修改</a>                                
+                                                <a href="javascript:void(0);" data-ajax="{{:U('/Admin/Menu/destroy',array('id'=>$authRuleRows['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                            </td>
+                                        </tr>
+                                        <if condition="$authRuleRows.child">
+                                            <volist name="authRuleRows['child']" id="authRuleRow"> 
+                                            <tr class="info">                                       
+                                                <td><input class="ids" type="checkbox" name="id[]" value="{{$authRuleRow.id}}"></input></td>
+                                                <td class="text-left">&nbsp;&nbsp;┗━ {{$authRuleRow.title}}</td>
+                                                <td>
+                                                    {{$authRuleRow.name}}
+                                                </td>
+                                                <td><i class="{{$authRuleRow.icon}}"></i></td>
+                                                <td>
+                                                    <if condition="$authRuleRow.islink == 0">
+                                                    <span class="label label-danger">否</span>
+                                                    <else />
+                                                    <span class="label label-success">是</span>
+                                                    </if>
+                                                </td>
+                                                <td><input type="text" class="input-sort input-ajax-submit" data-ajax="{{:U('/Admin/Menu/sort',array('id'=>$authRuleRow['id']))}}" value="{{$authRuleRow.sort}}" /></td>
+                                                <td>
+                                                    <a href="{{:U('/Admin/Menu/edit',array('id'=>$authRuleRow['id']))}}" class="btn btn-sm btn-info">修改</a>                                
+                                                    <a href="javascript:void(0);" data-ajax="{{:U('/Admin/Menu/destroy',array('id'=>$authRuleRow['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                        </if>
+                                        </volist>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button class="btn btn-info" type="submit">删除</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

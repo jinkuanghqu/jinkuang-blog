@@ -1,0 +1,100 @@
+<div class="m-col-r f_right width950" style="width:940px">
+    <div class="address-box">
+        <p class="dt">My Profile</p>
+        <div class="address-dl">
+            <form action="{{:U('AccountSet/myProfile')}}" method="post">
+                <!-- 第一项 margin-top值为0-->
+                <div class="form-item clearfix fore">
+                    <label class="f_left">
+                        <em class="red_e31616">*</em>
+                        Contact Name：
+                    </label>
+                    <div class="dl f_left clearfix" style="padding:0">
+                        <div class="item f_left">
+                            <p>
+                                <input type="text" class="input width120" name="first_name" placeholder="First Name" value="{{$userRow.first_name|default=""}}">
+                            </p>
+                        </div>
+                        <div class="item f_left margin_left8">
+                            <p><input type="text" class="input width120" name="last_name" placeholder="Last Name" value="{{$userRow.last_name|default=""}}"></p>
+                        </div>
+                    </div>
+                    <!-- 错误提示 可根据实际情况放在不同地方-->
+                    <span class="tip margin_left5 red_e31616 f_left">It is required!</span>
+                    <!-- -->
+                </div>
+                <div class="form-item clearfix">
+                    <label class="f_left">
+                        <em class="red_e31616">*</em>
+                        Gender:
+                    </label>
+                    <div class="dl f_left clearfix f14" style="padding:0">
+                        <input type="radio" name="gender" value="0" <php>echo $userRow[gender]?"":"checked"</php>> Male
+                        <input type="radio" name="gender" value="1" class="margin_left30" <php>echo $userRow[gender]?"checked":""</php>> Female
+                    </div>
+                </div>
+
+                <div class="form-item clearfix">
+                    <label class="f_left">
+                        <em class="red_e31616">*</em>
+                        Email Address:
+                    </label>
+                    <div class="dl f_left clearfix f14" style="padding:0">
+                        {{$userRow.email}}
+                        <a href="{{:U('AccountSet/emailModify')}}" class="margin_left15 blue_link">(change email address)</a>
+                    </div>
+                </div>
+                <div class="form-item clearfix f14">
+                    <label class="f_left" style="height: 40px;line-height: 50px;">
+                        <em class="red_e31616">*</em>
+                        Tel：
+                    </label>
+                    <div class="dl f_left clearfix" style="padding:0">
+                        <div class="item f_left">
+                            <p class="text_align_c col333">Country code</p>
+                            <p><input type="text" class="input width78" name="phone_tel[]" value="{{$phone[0]|default=""}}"></p>
+                        </div>
+                        <div class="item f_left margin_left8">
+                            <p class="text_align_c col333"> Area code  </p>
+                            <p><input type="text" class="input width78" name="phone_tel[]" value="{{$phone[1]|default=""}}"></p>
+                        </div>
+                        <div class="item f_left margin_left8">
+                            <p class="text_align_c col333">Number</p>
+                            <p><input type="text" class="input width78" name="phone_tel[]" value="{{$phone[2]|default=""}}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-item clearfix f14">
+                    <label class="f_left" style="height: 40px;line-height: 50px;">
+                        <em class="red_e31616">*</em>
+                            Fax：
+                    </label>
+                    <div class="dl f_left clearfix" style="padding:0">
+                        <div class="item f_left">
+                            <p class="text_align_c col333">Country code</p>
+                            <p><input type="text" class="input width78" name="fax[]" value="{{$fax[0]|default=""}}"></p>
+                        </div>
+                        <div class="item f_left margin_left8">
+                            <p class="text_align_c col333"> Area code  </p>
+                            <p><input type="text" class="input width78" name="fax[]" value="{{$fax[1]|default=""}}"></p>
+                        </div>
+                        <div class="item f_left margin_left8">
+                            <p class="text_align_c col333">Number</p>
+                            <p><input type="text" class="input width78" name="fax[]" value="{{$fax[2]|default=""}}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-item clearfix">
+                    <label class="f_left">
+                        &nbsp;
+                    </label>
+                    <div class="dl f_left clearfix" style="padding:0">
+                        <p>
+                            <button href="javascript:" class="submit red_btn red_btn17">Preservation</button>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs">
+            <foreach name="settingRowsForArrange" item="vo" key="k">
+                <li role="presentation" 
+                <if condition="$k == 'main'">
+                class="active"
+                </if>
+                ><a href="#{{$k}}">{{$groups[$k]}}</a></li>
+            </foreach>
+        </ul>
+    </div>
+    <form class="form-horizontal autoBootstrapValidator" name="formData" data-ajax='true'>
+    <div class="tab-content">
+    <foreach name="settingRowsForArrange" item="rows" key="k">
+        <div role="tabpanel" class="tab-pane fade in
+        <if condition="$k == 'main'">
+        active
+        </if>
+        "
+        id="{{$k}}"
+        >
+            <div class="col-sm-12">                
+                    <volist name="rows" id="vo">
+                    <if condition="$vo.input_types == 'hidden'">
+                         <input type="hidden" class="form-control" name="{{$vo['key']}}" value="{{$vo['value']}}"/>
+                    <else />
+                        <div class="form-group">
+                            <label for="inputname" class="col-sm-2 control-label">{{$vo.description}}</label>
+                            <div class="col-sm-6" data-toggle="tooltip" data-placement="right" title="调用方法：{{$Think.config.TMPL_L_DELIM}}$Think.config.{{$vo.key}}{{$Think.config.TMPL_R_DELIM}}">
+                            <switch name="vo.input_types">
+                                <case value="textarea">
+                                    <textarea class="form-control" check-type="{{$vo.check}}" name="{{$vo.key}}">{{$vo.value}}</textarea>
+                                </case>
+                                <case value="text">
+                                    <input type="text" class="form-control" check-type="{{$vo.check}}" name="{{$vo['key']}}" value="{{$vo['value']}}"/>
+                                </case>
+                                <case value="radio">
+                                    <if condition="$vo.value == 'TRUE'">
+                                    <input type="radio" class="input-icheck"  name="{{$vo['key']}}" value="TRUE" checked="checked"/>是&nbsp;&nbsp;
+                                    <input type="radio" class="input-icheck"  name="{{$vo['key']}}" value="FALSE" />否
+                                    <else />
+                                    <input type="radio" class="input-icheck"  name="{{$vo['key']}}" value="TRUE" />是&nbsp;&nbsp;
+                                    <input type="radio" class="input-icheck"  name="{{$vo['key']}}" value="FALSE" checked="checked" />否
+                                    </if>
+                                </case>
+                                <case value="file">
+                                    <div class="input-group">
+                                        <textarea class="form-control input-file-text input-value-4-input" check-type="{{$vo.check}}" name="{{$vo['key']}}">{{$vo['value']}}</textarea>
+                                      <span class="input-group-btn">
+                                        <input type="file" class="btn-input-file" data-ext="/(\.jpg|\.png|\.gif)$/" />
+                                        <button class="btn btn-success" type="button">上传</button>
+                                      </span>
+                                    </div><!-- /input-group -->   
+                                </case>
+                                <default />
+                                <input type="{{$vo.input_types}}" class="form-control" check-type="{{$vo.check}}" name="{{$vo['key']}}" value="{{$vo['value']}}"/>
+                            </switch>                    
+                            </div>
+                            
+                        </div>
+                    </if>
+                    </volist>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+
+                
+            </div>
+        </div>
+    </foreach>
+    </div>
+    </form>
+</div>

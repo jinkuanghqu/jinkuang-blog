@@ -1,0 +1,136 @@
+
+<div class="subItemContainer">
+    <volist name="data[0]" id="item">
+        <div class="subitems">
+            <volist name="data[$item['id']]" id="subitem">
+                <dl class="fore1">
+                    <dt><a href="http://shouji.jd.com" target="_blank">{{$subitem['name']}}</a></dt> <!-- second category -->
+                    <dd>
+                        <volist name="data[$subitem['id']]" id="cat">
+                            <a href="http://list.jd.com/list.html?cat=9987,653,655" target="_blank">{{$cat['name']}}</a> <!-- third category -->
+                        </volist>
+                    </dd>
+                </dl>
+            </volist>
+        </div>
+    </volist>
+</div>
+
+<style>
+    .subitems{
+        width:600px;
+        background:#f7f7f7;
+        min-height:200px;
+        padding:6px 0px 6px 20px;
+        display:none;
+        border: solid 2px #E00;
+    }
+    .subitems dl{
+        width:100%;
+        overflow:hidden;
+        line-height: 2em;
+    }
+    .subitems dt {
+        position: relative;
+        float: left;
+        width: 80px;
+        padding: 4px 30px 5px 5px;
+        text-align: right;
+        font-weight: 700;
+    }
+    .subitems dt i {
+        position: absolute;
+        top: 13px;
+        right: 18px;
+        width: 4px;
+        height: 14px;
+        font: 400 9px/14px consolas;
+    }
+    .subitems dt a{
+        color:#666 !important;
+        text-decoration: none;
+    }
+    .subitems dt a:hover{
+        color:#E00 !important;
+        text-decoration: underline !important;
+    }
+    .subitems dd a {
+        float: left;
+        padding: 0 8px;
+        margin: 4px 0;
+        line-height: 16px;
+        height: 16px;
+        border-left: 1px solid #e0e0e0;
+        white-space: nowrap;
+        color:#666 !important;
+        text-decoration: none;
+    }
+    .subitems dd a:hover{
+        color:#E00 !important;
+        text-decoration: underline !important;
+    }
+    .subitems dd {
+        float: left;
+        width: 480px;
+        padding: 6px 0;
+        border-top: 1px solid #eee;
+    }
+</style>
+
+<script>
+     $(document).ready(function(){
+        var currentItem;
+        $("#catContainerList>li").mouseenter(function(){
+            var catIndex = $("#catContainerList>li").index(this);
+            //var catIndex = parseInt($(this).attr('cat-index'));
+            var parent = $(this).parent();
+            var pTop   = parent.offset().top
+            var pBottom = pTop + parent.outerHeight();
+            var subCat = $(".subitems").eq(catIndex);
+            var liThis = this,
+                offset = $(this).offset(),
+                left   = offset.left + $(this).outerWidth(),
+                top    = $(this).offset().top;
+            var subCatBottom = top + subCat.outerHeight();
+            if(subCatBottom > pBottom){
+                top = pBottom - subCat.outerHeight();
+            }
+            if(top < pTop){
+                top = pTop;
+            }
+
+            var stl = {
+                position:'absolute',
+                left: left + 'px',
+                top: top + 'px',
+                zIndex: 100
+            }
+            subCat.css(stl).show();
+            currentItem = subCat;
+
+            subCat.mouseleave(function(event){
+                var evtTarget = event.relatedTarget;
+                if(evtTarget != liThis){
+                    $(this).hide();
+                }
+            });
+        });
+
+        $("#catContainerList>li").mouseleave(function(event){
+            var x = event.pageX;
+            var y = event.pageY;
+            if(!currentItem.is(':hidden')){
+                var offset = currentItem.offset();
+                var div_left = offset.left;
+                var div_top = offset.top;
+                var div_right = offset.left + currentItem.outerWidth();
+                var div_bottom = offset.top + currentItem.outerHeight();
+                if(x<div_left || x>div_right || y<div_top || y>div_bottom){
+                    currentItem.hide();
+                }
+            }
+            
+        });
+
+    });
+</script>

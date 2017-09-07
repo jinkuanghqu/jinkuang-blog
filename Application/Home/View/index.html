@@ -1,0 +1,356 @@
+<style type="text/css">
+input.sinob2b-checkbox+label.sinob2b-checkbox-label{
+    padding-left: 15px;
+    margin-left: 10px;
+    position: relative;
+}
+
+input.sinob2b-checkbox+label.sinob2b-checkbox-label > i{
+    background-image: url(/Public/images/member_icon2.png);
+    background-repeat: no-repeat;
+    background-position: -141px -175px;
+    background-clip: padding-box;
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    cursor: pointer;
+}
+
+input.sinob2b-checkbox:checked+label.sinob2b-checkbox-label > i{
+    /*  这个地方我要用什么伪类*/
+    background-position: -120px -175px;
+}
+
+input.sinob2b-checkbox{
+    display: none;
+}
+</style>
+
+<div class="min_width">
+    <div class="breadNavContainer">
+        <p class="min_width">
+            <a href="javascript:">Home</a> &gt;
+            <a href="{{:U('UserOrder/allOrder')}}">My SinoB2B</a> &gt;
+            <a href="javascript:" class="active">Review</a>
+        </p>
+    </div>
+    <!-- 公司信息-->
+    <form name="formReview" id="formReview" action="{{:U('/PubReview/addReview')}}" method="POST" 
+    enctype="application/x-www-form-urlencoded" data-validator-option="{stopOnError:false, timely:true}">
+        <input type="hidden" name="order_id" value="{{$orderId}}" />
+        <input type="hidden" name="store_id" value="{{$storeInfo['id']}}" />
+        <div class="reviewContainer">
+            <div class="companyPanel">
+                <p class="dt">Review</p>
+                <div class="dl clearfix">
+                    <p class="f_left avstar"></p>
+                    <div class="rightInfo f_left">
+                        <p class="f14 name clearfix">
+                            <span class="f_left">Store：</span>
+                            <a href="{{$storeInfo['id']|sUrl}}" class="blue_1356cd f_left">
+                                {{$storeInfo['store_name']}}
+                            </a>
+                            <!-- 店铺等级 class为level1 - level5-->
+                            <i class="level f_left level3"></i>
+                            <a class="contact margin_left30 clearfix f_left">
+                                <i class="f_left"></i>
+                                <em class="f_left margin_left5">Contact me</em>
+                            </a>
+
+                        </p>
+                        <p class="f12 gray717070 margin_top5">
+                            Open: {{$storeInfo['open_year']}}year(s) {{$storeInfo['open_month']}}month(s)
+                        </p>
+                        <p class="f12 gray717070 margin_top5">
+                            Positive Feedback: <span class="blue_1356cd">{{$storeInfo['positive_feedback']|number_format=2}}%</span>
+                        </p>
+                        <p class="f12 gray717070 margin_top5">
+                            Transactions: <span class="blue_1356cd">{{$storeInfo['transactions']}}</span>
+                        </p>
+                        <p class="shop_review <if condition="!empty($storeInfo['evaluation_status'])">disabled</if>" style="font-size:14px">
+                            Store Review:
+                            <volist name="storeGradeList" id="sgrade">
+                                <input type="radio" class="sinob2b-checkbox" name="store_grade" value="{{$key}}" id="store-grade-{{$key}}" 
+                                <if condition="$i eq 1"> checked  </if><if condition="($storeInfo['evaluation_status'] eq 1) AND ($storeInfo['review_grade'] eq $key) AND ($i neq 1)"> checked </if> 
+                                <if condition="$evaluated eq 1"> disabled</if>/>
+                                <label for="store-grade-{{$key}}" class="sinob2b-checkbox-label">
+                                    <i></i> <span class="f14">{{$sgrade}}</span>
+                                </label>
+                            </volist>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 产品评价-->
+            <div class="productPanel">
+                <volist name="orderGoods" id="goods">
+                    <div class="item clearfix">
+                        <div class="l_p f_left">
+                            <p class="imgBox">
+                                <a href="{{$goods['goods_id']|gUrl}}">
+                                    <img src="{{:P($goods['goods_image'],168,168)}}" alt=""/>
+                                </a>
+                            </p>
+                            <p class="name">
+                                <a href="javascript:">{{$goods['goods_name']}} {{$goods['specification']}}</a>
+                            </p>
+                        </div>
+                        <div class="rightPanel f_left">
+                            <div class="t clearfix">
+                                <span class="f_left">Products Review：</span>
+                                <if condition="!empty($goodsComment['comment'][$goods['product_id']])">
+                                    <for start="0" end="5">
+                                        <a class="star <if condition="$i lt $goodsComment['comment'][$goods['product_id']]['grade']">active</if>"></a>
+                                    </for>
+                                <else/>
+                                    <p class="f_left goods-review">
+                                        <a class="star active"></a>
+                                        <a class="star active"></a>
+                                        <a class="star active"></a>
+                                        <a class="star"></a>
+                                        <a class="star"></a>
+                                    </p>
+                                    <input type="hidden" name="product_grade[{{$goods['product_id']}}]" value="" />
+                                    <input type="hidden" name="product_goods[{{$goods['product_id']}}]" value="{{$goods['goods_id']}}" />
+                                </if>
+                            </div>
+                            <textarea name="review_content[{{$goods['product_id']}}]" class="text" placeholder="这里是提示信息：Hello!   产品描述是否相符，交易是否快捷！" <if condition="$goods['evaluation_status'] eq 1"> readonly="readyonly" </if>
+                                data-rule="required;"
+                                data-msg-required="Please input your comment">
+                                <if condition="!empty($goodsComment['comment'][$goods['product_id']])">
+                                    {{$goodsComment['comment'][$goods['product_id']]['content']|htmlspecialchars_decode}}
+                                </if></textarea>
+                            <div class="b clearfix">
+                                <div class="left f_left clearfix">
+                                    <span class="f_left">Show Images：</span>
+                                    <div class="thumbGroup f_left clearfix">
+                                        <!-- 添加图片图标-->
+                                        <p class="thumb f_left">
+                                            <a href="javascript:" class="addBtn"></a>
+                                            <input type="file" class="input-picture"  data-product-id="{{$goods['product_id']}}" multiple="multiple" <if condition="$goods['evaluation_status'] eq 1"> disabled</if>>
+                                        </p>
+                                        <if condition="$goods['evaluation_status'] eq 1">
+                                            <volist name="goodsComment['thumbs'][$goods['product_id']]" id="thumb">
+                                                <p class="thumb thumb-count f_left"><a href="javascript:"><img width="35px" height="34px" src="{{:P($thumb,35,35)}}" /></a><a class="del none"></a></p>
+                                            </volist>
+                                        </if>
+                                        <!--<p class="addPic"></p>-->
+                                    </div>
+                                    <span class="f_left margin_left10 picture-stat"><em><if condition="$goods['evaluation_status'] eq 1">{{$goodsComment['thumbs'][$goods['product_id']]|count}}<else/>0</if>/{{$Think.config.UPLOAD_IMG_COUNT}}</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+                <div class="anonymous" style="margin: 20px 10px 0 800px">
+                    <input type="checkbox" class="sinob2b-checkbox" name="anonymous" id='anonymous' value="1"/>
+                    <label for="anonymous" class="sinob2b-checkbox-label">
+                        <i></i> Anonymous
+                    </label>
+                    &nbsp;&nbsp;<a href="javascript:" class="yellow_btn yellow_btn17" <if condition="$evaluated eq 0"> onclick="doSubmitForm()"</if>>Comment</a>
+                </div>
+            </div>
+            <!-- 产品评价-->
+            <div class="desPanel f14 gray9a9a9a">
+                   <p> 评价须知：</p>
+                   <p> 1.请您根据本次交易，给予真实、客观、仔细地评价。您的评价将是其他会员的参考，也将影响卖家的信用。</p>
+                    <p>2.累积信用计分规则：中评不计分，但会影响卖家的好评率，请慎重给予。30天内，相同买家和卖家之间的信  用评价计分正负累
+                    积不超过6分。评价成功后无法修改。</p>
+                    <p>3.动态店铺评分计分规则：店铺评分是匿名的。每个自然月中，相同买家和卖家之间的店铺评分计分次数不超过3次。店铺评分成
+                    功后无法修改。</p>
+
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<style>
+    .input-picture{
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        top: 0;
+    }
+</style>
+
+<script>
+    $(document).ready(function(){
+        var MAX_THUMBS = {{$Think.config.UPLOAD_IMG_COUNT}};
+        var THUMB_MAX_SIZE = {{$Think.config.UPLOAD_IMG_MAX_SIZE}} * 1024;
+        var totalThumbs = 0;
+
+        if (!THUMB_MAX_SIZE) THUMB_MAX_SIZE = 1024 * 1024;
+        if (!MAX_THUMBS) MAX_THUMBS = 5;
+
+        $('#topMenuThir').html("{{$topMenuThir}}");
+        $(".goods-review > .star").hover(function(){
+            if ({{$evaluated}} == 0) {
+                $(this).prevAll().addClass('active');
+                $(this).addClass('active');
+                $(this).nextAll().removeClass('active');
+                var $starParent = $(this).parent();
+                $starParent.next().val($starParent.find(".active").length);
+            }
+        });
+
+        $(".anonymous >.c-radio").click(function(){
+            $(this).toggleClass('active');
+        });
+
+        $(".shop_review > .c-radio").click(function(){
+            if($(this).parent().hasClass('disabled')){
+                return false;
+            }
+            if(!$(this).hasClass('active')){
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+        });
+
+        $('.input-picture').bind('change',function (e) {
+            var productId = $(this).attr('data-product-id');
+            var obj = $(this).parent().parent();
+             if(this.files.length == 0 ){
+                return false;
+             }
+
+             for (var index = 0; index<this.files.length ; index++) {
+                var reader = new FileReader();
+                reader.readAsDataURL( this.files[index] );
+                if (this.files[index].size > THUMB_MAX_SIZE) {
+                    sinob2bAlert('The thumb size should not exceed 512Kb!', {status:'info'});
+                    break;
+                }
+                reader.onload = function( e ) {
+                    if(totalThumbs < MAX_THUMBS) {
+                        obj.append('<p class="thumb thumb-count f_left"><a href="javascript:"><img width="35px" height="34px" src="'+this.result +'" /><input type="hidden" name="review_thumb[' + productId + '][]" value="'+this.result+'"/></a><a class="del none"></a></p>');
+
+                        reBindMouseOver(obj);
+                        totalThumbs = countThumbs(obj);
+                    }else{
+                        sinob2bAlert('Max ' + MAX_THUMBS + ' pictures allowed!', {status:'info'});
+                    }
+                }
+             }
+
+
+        });
+
+        function reBindMouseOver(obj){
+            obj.find(".thumb-count").unbind();
+            obj.find(".del").unbind();
+            obj.find(".thumb-count").bind('mouseover',function(){
+                $(this).find('.del').removeClass('none');
+            });
+            obj.find(".thumb-count").bind('mouseout',function(){
+                $(this).find('.del').addClass('none');
+            });
+            obj.find(".del").bind('click',function(){
+                $(this).parent().remove();
+                countThumbs(obj);
+            });
+        }
+
+        function countThumbs(obj){
+            var thumbTotal = $(".thumb-count", obj).length;
+            $(".picture-stat em",obj.parent()).html(thumbTotal + '/' + MAX_THUMBS);
+            return thumbTotal;
+        }
+    });
+
+    function reviewStore(orderId, storeId){
+        var grade = $(".shop_review>.c-radio.active").attr('grade-value');
+        var postData = {
+            'order_id': orderId,
+            'store_id': storeId,
+            'grade'  : grade,
+        };
+
+        $.post("{{:U('pubReview/addStoreReview')}}", postData, function(result){
+            var data = JSON.parse(result);
+            if(data['status']==0 || data['status']==1){
+                $(".shop_review").addClass('disabled');
+            }
+            var statusStr ='info';
+            if(data['status'] == 0){
+                statusStr = 'ok';
+            }else if(data['status'] == -1){
+                statusStr = 'fail';
+            }
+            sinob2bAlert(data['info'], {status: statusStr});
+        });
+    }
+
+    function reviewGoods(orderId, goodsId, obj, evaluation_status){
+        if(evaluation_status) {
+            sinob2bAlert('You have reviewed this goods.', {status:'info'});
+            return;
+        }
+        var goodsContObj = $(obj).parent().parent().parent();
+        var grade = goodsContObj.find('.goods-review>.star.active').length;
+        var content = goodsContObj.find("textarea[name='review_content']").val();
+        var anonymous = $(obj).parent().find(".c-radio").hasClass('active') ? 1 : 0;
+        var review_thumbs = [];
+        $("input[name^='review_thumb']").each(function(){
+            review_thumbs.push($(this).val());
+        });
+
+        var postData = {
+            'order_id'     : orderId,
+            'goods_id'     : goodsId,
+            'grade'        : grade,
+            'content'      : content,
+            'anonymous'    : anonymous,
+            'review_thumb' : review_thumbs,
+        }
+
+        $.post("{{:U('pubReview/addGoodsReview')}}", postData, function(result){
+            var data = JSON.parse(result);
+            if(data['status']==0 || data['status']==3){
+                goodsContObj.find("textarea[name^='review_content']").attr('disabled','disabled');
+                goodsContObj.find("input.input-picture").attr('disabled','disabled');
+            }
+            var statusStr;
+            switch(data['status']){
+                case 0: 
+                    statusStr = 'ok';
+                    break;
+                case 1:
+                    statusStr = 'error';
+                    break;
+                case 2:
+                case 3:
+                    statusStr = 'info';
+                    break;
+                case 4:
+                    statusStr = 'fail';
+                    break;
+                default:
+                    statusStr = 'info';
+            }
+            sinob2bAlert(data['info'], {status: statusStr});
+        })
+    }
+    function doSubmitForm(){
+        var valid = true;
+        $("texarea[name^='review_content']").each(function(){
+            if($.trim($(this).val()) == '') {
+                sinob2bAlert('Comment cannot be emtpy', {status:'info'});
+                valid = false;
+                return false;
+            }
+        });
+
+        if (valid) {
+            $("#formReview").submit();
+        }
+    }
+
+</script>

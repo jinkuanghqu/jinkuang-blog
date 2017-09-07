@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+                <i class="glyphicon glyphicon-tags"></i> <code></code>
+                在控制器中调用<kbd>W('Advert/byCode',['CODE'])</kbd>
+                在视图中调用<kbd>{{$Think.config.TMPL_L_DELIM}}:W('Advert/byCode',['CODE']){{$Think.config.TMPL_R_DELIM}}</kbd>
+            </div>
+    </div>
+    
+
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;调用列表
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">                        
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/Advert/add')}}" class="btn btn-success">添加</a>
+                        </div>
+                        <form action="{{:U('/Admin/Advert/destroy')}}" class="form-horizontal checkbox-del">
+                            <div class="col-sm-12 panel-scroll">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"><input class="check-all" type="checkbox" value=""></th>
+                                            <th class="center">调用类型名称</th>
+                                            <th class="center">调用类型代码</th>
+                                            <th class="center">调用内容个数</th>                                           
+                                            <th class="center">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="webCallRows" id="vo">                
+                                        <tr>
+                                            <td><input class="ids" type="checkbox" name="id[]" value="{{$vo.id}}"></td>
+                                            <td>{{$vo.name}}</td>
+                                            <td>{{$vo.code}}</td>
+                                            <td>{{$vo.display_number}}</td>                                           
+                                            <td>
+                                                <a href="{{:U('/Admin/Advert/edit',array('id'=>$vo['id']))}}" class="btn btn-sm btn-info">修改</a>                                
+                                                    <a href="javascript:void(0);" data-ajax="{{:U('/Admin/Advert/destroy',array('id'=>$vo['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    </tbody>
+                                </table>
+                            </div>                          
+
+                            <div class="col-sm-12">
+                                <button class="btn btn-info" type="submit">删除</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

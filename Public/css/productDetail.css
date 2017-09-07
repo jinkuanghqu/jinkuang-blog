@@ -1,0 +1,15 @@
+.integral_num{
+    font-size: large;
+    color: red;
+}
+
+.productImg{
+    max-width: 100%;
+    max-height: 300px;
+}
+.page-hd{
+    text-align: center;
+}
+.page-bd{
+    padding: 15px;
+}

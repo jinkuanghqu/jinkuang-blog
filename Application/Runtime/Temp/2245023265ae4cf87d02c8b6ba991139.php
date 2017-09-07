@@ -1,0 +1,7 @@
+<?php
+//000000000000a:35:{s:12:"DEFAULTIMAGE";s:57:"./Public/uploads/2016-03-07/2016-03-07.14573294458241.jpg";s:19:"IFRAME_BODY_SETTIME";s:4:"1000";s:5:"title";s:18:"测试网站标题";s:8:"sitename";s:12:"测试标题";s:8:"keywords";s:15:"测试关键词";s:11:"description";s:15:"测试描述ada";s:6:"footer";s:12:"底部内容";s:9:"MAIL_HOST";s:18:"smtp.exmail.qq.com";s:13:"MAIL_SMTPAUTH";s:4:"TRUE";s:13:"MAIL_USERNAME";s:19:"service@sinob2b.com";s:9:"MAIL_FROM";s:19:"service@sinob2b.com";s:13:"MAIL_FROMNAME";s:7:"sinob2b";s:13:"MAIL_PASSWORD";s:7:"Sinob2b";s:12:"MAIL_CHARSET";s:4:"utf8";s:11:"MAIL_ISHTML";s:4:"TRUE";s:18:"CATEGORY_GOODS_NUM";s:2:"20";s:26:"INDEX_SAVE_BIG_CATEGORY_ID";s:2:"77";s:27:"NO_LOGIN_CATR_MAX_LIFE_TIME";s:5:"10000";s:22:"REGISTRATION_AGREEMENT";s:255:"卓创资讯用户注册协议
+
+
+1、卓创资讯服务条款确认
+卓创资讯的各项网络电子服务的所有权和运营权归山东卓创资讯集团，任何单位和个人非经本公司授权不得以本公司及其所有的网站名义进";s:18:"GOODS_DEFAULT_STAR";s:1:"5";s:19:"UPLOAD_IMG_MAX_SIZE";s:4:"1024";s:16:"UPLOAD_IMG_COUNT";s:1:"2";s:11:"earnestProp";s:3:"0.3";s:27:"POINTS_BY_PURE_TEXT_COMMENT";s:1:"2";s:28:"POINTS_BY_TEXT_IMAGE_COMMENT";s:1:"4";s:28:"POINTS_RATIO_BY_ORDER_FINISH";s:3:"0.1";s:13:"SUB_MAIL_HOST";s:18:"smtp.exmail.qq.com";s:17:"SUB_MAIL_SMTPAUTH";s:4:"TRUE";s:17:"SUB_MAIL_USERNAME";s:22:"newsletter@sinob2b.com";s:13:"SUB_MAIL_FROM";s:22:"newsletter@sinob2b.com";s:17:"SUB_MAIL_FROMNAME";s:7:"sinob2b";s:17:"SUB_MAIL_PASSWORD";s:7:"Sinob2b";s:16:"SUB_MAIL_CHARSET";s:4:"utf8";s:15:"SUB_MAIL_ISHTML";s:4:"TRUE";s:8:"RMB_TATE";s:4:"0.65";}
+?>

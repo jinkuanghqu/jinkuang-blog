@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    搜索
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">标题</label>
+                        <input type="title" value="{{$params.title}}" class="form-control" id="exampleInputEmail3" placeholder="商品名称">
+                      </div>                   
+
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword3">调用类型</label>
+                        <select class="form-control" name="web_call_id">
+                            <option value="">*所有调用类型</option>
+                            <volist name="webCallRows" id="vo">
+                                <if condition="$params['web_call_id'] == $vo['id']">
+                                <option value="{{$vo.id}}" selected="selected">{{$vo.name}}</option>
+                                <else />
+                                <option value="{{$vo.id}}">{{$vo.name}}</option>
+                                </if>
+                            </volist>                            
+                        </select>
+                      </div>         
+                      <button type="submit" class="btn btn-info">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;调用内容列表
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">                        
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/AdvertDetail/add')}}" class="btn btn-success">添加</a>
+                        </div>
+                        <form action="{{:U('/Admin/AdvertDetail/destroy')}}" class="form-horizontal checkbox-del">
+                            <div class="col-sm-12 panel-scroll">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"><input class="check-all" type="checkbox" value=""></th>
+                                            <th class="center">调用类型</th>
+                                            <th class="center">标题</th>
+                                            <th class="center">链接</th>
+                                            <th class="center">排序</th>
+                                            
+                                            <th class="center">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="webCallDetailRows" id="vo">
+                                        <tr>
+                                            <td><input class="ids" type="checkbox" name="id[]" value="{{$vo.id}}"></td>
+                                            <td>{{$vo.web_call_detail.name}}</td>
+                                            <td>{{$vo['title']}}</td>
+                                            <td>{{$vo['href']}}</td>
+                                            <td><input type="text" class="input-sort input-ajax-submit" data-ajax="{{:U('/Admin/AdvertDetail/sort',array('id'=>$vo['id']))}}" value="{{$vo.sort}}" /></td>
+                                            <td>
+                                                <a href="{{:U('/Admin/AdvertDetail/edit',array('id'=>$vo['id']))}}" class="btn btn-sm btn-info">修改</a>                                
+                                                <a href="javascript:void(0);" data-ajax="{{:U('/Admin/AdvertDetail/destroy',array('id'=>$vo['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button class="btn btn-info" type="submit">删除</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

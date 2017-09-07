@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">    
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;分类管理
+                    </a>
+                </h4>
+            </div>    
+  
+            <div class="panel-collapse collapse in">
+                
+                
+                <div class="panel-body">
+                  <div class="row panel-scroll">  
+                  
+                        <div class="col-sm-12">
+                        <a href="{{:U('/Admin/ArticleCategory/add')}}" class="btn btn-success">添加</a>
+                        </div>  
+                     <div class="col-sm-12">
+                         <table class="table table-hover">
+                             <thead>
+                                <tr>
+                                    {{$th_str}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="result" item="vo" >
+                                    <tr class="ng-scope">
+
+                                       <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.id}}</span></div>
+                                        </td>
+                                        <td class="text-left">
+                                            <div class="center" ><span class="ng-binding">{{$vo.name}}</span></div>
+                                        </td>
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.keywords}}</span></div>
+                                        </td>
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.description}}</span></div>
+                                        </td>                                    
+                                     
+                                        <td>
+                                            <div class="center">
+                                            <input name="sort" style="width:60px;" class="inputorder" type="number" value="{{$vo.sort}}" val="{{$vo.id}}" />                                
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="left">
+                                                <a href="/Admin/ArticleCategory/edit?id={{$vo.id}}" class="btn btn-sm btn-info">修改</a>
+                                                <a class="btn btn-sm btn-info" id="del" onclick="del({{$vo.id}})">删除</a>        
+                                            </div>
+                                        </td>
+                                    </tr>
+                             </foreach>		
+                             </tbody>
+                         </table>
+                     </div>
+                  </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+     
+    function del(id){
+    
+        if (confirm("确认要删除？")) {
+        
+            $.post("{{:U('/admin/ArticleCategory/delete')}}",{id:id},function(result){
+                if(result == 2){
+                    alert('删除失败,此分类下有子类，请先删除子类');
+                }
+                if(result == 1){
+                    window.location.href = "/admin/ArticleCategory/index"; 
+                }
+                if(result === 0){
+                    alert('删除分类失败！');                
+                }
+            });  
+        }  
+    }
+
+    $(function(){
+        $(".inputorder").change(function(){
+            var id = $(this).attr('val');
+            var sort = $(this).val();
+            if(sort && id){
+                $.post("{{:U('/admin/ArticleCategory/updateSort')}}",{id:id,sort:sort},function(data){
+                    if(data==1){
+                        window.location.reload(true);
+                    }
+                });
+            }
+        })
+    })           
+    
+    
+</script>

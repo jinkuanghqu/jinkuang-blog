@@ -1,0 +1,96 @@
+<script type="text/javascript">
+$(function(){
+    var hash = {
+        'qq.com': 'http://mail.qq.com',
+        'gmail.com': 'http://mail.google.com',
+        'sina.com': 'http://mail.sina.com.cn',
+        '163.com': 'http://mail.163.com',
+        '126.com': 'http://mail.126.com',
+        'yeah.net': 'http://www.yeah.net/',
+        'sohu.com': 'http://mail.sohu.com/',
+        'tom.com': 'http://mail.tom.com/',
+        'sogou.com': 'http://mail.sogou.com/',
+        '139.com': 'http://mail.10086.cn/',
+        'hotmail.com': 'http://www.hotmail.com',
+        'live.com': 'http://login.live.com/',
+        'live.cn': 'http://login.live.cn/',
+        'live.com.cn': 'http://login.live.com.cn',
+        '189.com': 'http://webmail16.189.cn/webmail/',
+        'yahoo.com.cn': 'http://mail.cn.yahoo.com/',
+        'yahoo.cn': 'http://mail.cn.yahoo.com/',
+        'eyou.com': 'http://www.eyou.com/',
+        '21cn.com': 'http://mail.21cn.com/',
+        '188.com': 'http://www.188.com/',
+        'foxmail.com': 'http://www.foxmail.com',
+        'outlook.com': 'http://www.outlook.com'
+    };
+    var email = "{{$email}}";
+    var _mail = email.split('@')[1];    //获取邮箱域
+    for (var j in hash){
+        if(j == _mail){
+            $("#email").attr("href", hash[_mail]);    //替换登陆链接
+            return;
+        }else{
+            $("#email").attr("href", 'http://www.' + _mail); //Guess
+        }
+    }
+
+})
+function sendMail(email)
+{
+    $.post("{{:U('Home/AccountSet/resendResetMailBox')}}",{email:email},sinob2bAjaxReturn,'json');
+}
+</script>
+<div class="m-col-r f_right width950">
+    <div class="sec-box">
+        <p class="dt dt1">Security Center</p>
+        <div class="sec-home-dl">
+            <!-- 修改密码-->
+            <div class="sec_email_progress bar2">
+                <span class="status1 status">Verify Identity</span>
+                <span class="status2 status">Reset Mailbox</span>
+                <span class="status3 status">Complete</span>
+            </div>
+            <!-- form-->
+            <div class="form email2">
+                <div class="inputBox clearfix margin_top10">
+                   <i class="icon"></i>
+                   <div class="rightInfo">
+                       <p>Verify email address has been sent to: {{$email}}
+                           Verify that the mailbox is valid for 24 hours
+                       </p>
+                       <p>Please <a href="javascript:" id="email" target="_blank" class="blue_link">login</a> as soon as possible to verify your email</p>
+                   </div>
+                </div>
+                <div class="inputBox clearfix margin_top30">
+                    <label for=""> &nbsp;</label>
+                    <div class="form-dl">
+                        <a onclick="sendMail('{{$email}}')" class="submit red_btn red_btn17">Send verification email again</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底下文字说明-->
+        <div class="b-des">
+            <div class="clearfix f14 gray717070">
+                <span class="f_left">▪ </span>
+                <p class="f_left" style="width: 920px;line-height: 24px;margin-left: 3px;">
+                    If you do not receive the mailbox? Please check your junk box or advertising messages.
+                </p>
+            </div>
+            <div class="clearfix f14 gray717070">
+                <span class="f_left">▪ </span>
+                <p class="f_left" style="width: 920px;line-height: 20px;margin-left: 3px;">
+                    If you have not received a spam or advertising box, try adding service@globex.cn noreply- to the recipient white list (which can be set on the white list of the mailbox),
+                    and re send the email validation.
+                </p>
+            </div>
+            <div class="clearfix f14 gray717070">
+                <span class="f_left">▪ </span>
+                <p class="f_left" style="width: 920px;line-height: 24px;margin-left: 3px;">
+                    If the retransmission after verification email has not yet received, please replace the email address.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

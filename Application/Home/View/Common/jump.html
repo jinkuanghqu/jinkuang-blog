@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><if condition="$data.type eq 0">Error jump ... <else/>Success jump ... </if></title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <style type="text/css">
+    body{
+        color:#666666;
+    }
+    .container {        
+        margin: 0 auto;
+        clear: both;
+    }
+    
+    header {
+        width: 1200px;
+        height: 100px;
+    }
+
+    section{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+    .main{
+        box-sizing: border-box;
+        height: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }    
+    .errorInfo{
+        margin-top: 16px;
+        padding-left: 102px;
+        <if condition="$data.type eq 0">
+        background-image: url(__PUBLIC__/images/error.png);
+        <else />
+        background-image: url(__PUBLIC__/images/success.png);
+        </if>
+        background-repeat: no-repeat;
+        background-position: left center;
+        min-height: 82px;
+        min-width:200px;
+        float: left;
+    }
+    .errorInfo h3{
+        text-align: center;
+    }
+    p{
+        font:12px/1.5 arial,'微软雅黑',YaHei,tahoma,"Hiragino Sans GB",\5b8b\4f53;
+    }
+    p a,p em{
+        color: #e31616;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <a href="/"><img src="__PUBLIC__/images/logo.jpg" alt="sinob2b"></a>
+    </header>
+    <section class="container errorBox">
+        <div class="errorInfo">
+            <h3>{{$data.msg}}</h3>
+            <p>Page automatically <a id="href" href="{{$data.jumpUrl}}">jump</a> waiting time: <em id="wait">5</em> seconds. </p>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+    var time = --wait.innerHTML;
+    if(time <= 0) {
+        location.href = href;
+        clearInterval(interval);
+    };
+}, 1000);
+})();
+</script>
+</html>

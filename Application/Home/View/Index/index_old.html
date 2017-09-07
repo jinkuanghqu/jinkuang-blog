@@ -1,0 +1,130 @@
+    <div id="index">
+    <!--banner-->
+    <div class="bannerContainer">
+            <a class="prev duration none"></a>
+            <a class="next duration none"></a>
+            {{:W('Advert/byCode',['BANNER'])}}
+    </div>
+    <!--分类-->
+    <div class="catContainer">
+        <div class="min_width clearfix">
+           
+            {{:W('Category/tree')}}
+
+            {{:W('Advert/byCode',['BANNER_BOTTOM_IMAGES'])}}
+        </div>
+    </div>
+    <!--Time-limited Offer -->
+        <div class="layerContainer">
+        <div class="min_width">
+            <p class="dt">TIME-LIMITED OFFER </p>
+            {{:W('Advert/byCode',['TIME_LIMITED_OFFER'])}}
+        </div>
+    </div>
+
+    <!--MUST CHECK OUT -->
+
+    <div class="proContainer">
+        <div class="min_width">
+            <p class="dt">MUST CHECK OUT</p>
+            <div class="dl clearfix">
+                <!-- 每行第一个margin-left值为0-->
+                {{:W('Goods/getMustCheckout',[])}}
+               
+            </div>
+        </div>
+    </div>
+    <!-- brands List-->
+    <div class="brandContainer">
+        <div class="min_width">
+            <p class="dt">FEATURED BRAND</p>
+            <div class="dl clearfix">
+                <div class="top clearfix">
+                    <div class="f_left">
+                    {{:W('Advert/byCode',['FEATURED_BRAND_TOP'])}}
+                    <div class="col-r f_left clearfix">
+                        {{:W('Brand/showBrandLog',['',8])}}
+                    </div>
+                </div>
+                
+            </div>
+            <!-- scroll list-->
+            <div class="scrollBrand clearfix">
+                <span class="leftBtn f_left"><i></i></span>
+                <div class="mainCon f_left" id="spec-list">
+                    {{:W('Brand/showBrandLog',['',6])}}
+                </div>
+                <span class="rightBtn f_left"><i></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+    <div class="otherListContainer" style="height:230px;">
+        <div class="min_width">
+            <p class="dt">Other Users Also Browsed </p>
+            <div class="scrollList clearfix">
+                <span class="leftBtn f_left"><i></i></span>
+                <ul class="mainCon f_left" id="spec-list1">
+                    <ul class="list-h clearfix">
+                        {{:W('Goods/getOtherUsersBrowser',[])}}
+                    </ul>
+                </ul>
+                <span class="rightBtn f_left"><i></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+</div>
+<!--slogan-->
+<script type="text/javascript">
+    $("#spec-list").jdMarquee({
+        deriction : "left",
+        width : 1075,
+        height : 128,
+        step : 2,
+        speed : 10,
+        delay : 10,
+        control : true,
+        _front : ".scrollBrand .leftBtn",
+        _back : ".scrollBrand .rightBtn"
+    });
+    $("#spec-list1").jdMarquee({
+        deriction : "left",
+        width : 1075,
+        height : 210,
+        step : 2,
+        speed : 10,
+        delay : 10,
+        control : true,
+        _front : ".scrollList .leftBtn",
+        _back : ".scrollList .rightBtn"
+    });
+//    banner
+    new Banner({
+        bannerBox: $('.bannerContainer'),
+        banner: $('.bannerItem'),
+        indexBtn: $('.btn_index'),
+        leftBtn: $('.bannerContainer .prev'),
+        rightBtn: $('.bannerContainer .next'),
+        indexBtnCurrent: 'current',
+        autoPlay: true,
+        autoPlayTime: 4000,
+        scrollSpeed: 1000,
+        bgColorSpeed: 500
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".tabPanel:first-child").show().siblings().hide();
+        $("li[data-flag]").click(function(ele){
+            var category = $(this).attr('data-flag');
+            if(!$(this).hasClass('active')){
+                $(this).addClass('active').siblings().removeClass('active');
+                var toShow = $(this).parent().next().find(".tabPanel." + category);
+                toShow.find(".catBigIcon>i:first-child").attr('class', $(this).find("p>span:first-child").attr('class'));
+                toShow.show().siblings().hide();
+            }
+
+        });
+    });
+</script>

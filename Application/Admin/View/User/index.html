@@ -1,0 +1,62 @@
+
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;会员列表
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">
+
+                            <div class="col-sm-12">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th  class="center">用户ID</th>
+                                            <th  class="center">头像</th>
+                                            <th class="center">昵称</th>
+                                            <th class="center">性别</th>
+                                            <th class="center">国家</th>
+                                            <th class="center">省份</th>
+                                            <th class="center">城市</th>
+                                            <th class="center">积分</th>
+                                            <!-- <th class="center">等级</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <volist name="userRows" id="userRow">
+                                        <tr class="info">
+                                            <td>{{$userRow.id}}</input></td>
+                                            <td><img src="{{$userRow.headimgurl}}" width="60" height="60"></input></td>
+                                            <td>{{$userRow.nickname}}</td>
+                                            <td>{{$userRow.sex}}</td>
+                                            <td>
+                                                {{$userRow.country}}
+                                            </td>
+                                            <td>{{$userRow.province}}</td>
+                                            <td>
+                                                {{$userRow.city}}
+                                            </td>
+                                            <td>
+                                                {{$userRow.integral}}
+                                            </td>
+                                        </tr>
+                                        </volist>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

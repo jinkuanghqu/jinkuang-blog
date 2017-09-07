@@ -1,0 +1,56 @@
+<include file="Common/header" />
+
+<script>
+    $(function(){
+        // var t;//设定跳转的时间
+        t =  $('.iframe-body').attr('data-setTime');
+        uid =  $('.iframe-body').attr('data-sid');
+        //alert(uid);
+        var lockrefer = setInterval(function() {
+            refer();
+        }, 1000);
+
+        function refer(){
+            if(t==60){
+                clearInterval(lockrefer);
+                parent.layer.open({
+                    type: 2,
+                    title: false,
+                    closeBtn: 0,
+                    shade: [0.8, '#393D49'],
+                    maxmin: false,
+                    maxmin: false,
+                    area: ['100%', '100%'],
+                    content: ["/admin/default/loginlock"], //这里content是一个普通的String
+                });
+                window.top.location.href = "/admin/default/loginlock";
+            }else if(t==0 || uid == ''){
+                window.top.location.href = "/admin/default/logout";
+            }
+            var body = $("body",parent.document);
+            var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+            loginOutIframe.find("#localtimeTime span").text(t);
+            // console.log(t);
+            t--;
+        }
+    });
+</script>
+
+
+
+<body class="iframe-body" data-sid="{{$adminRow.id}}" data-settime="{{$Think.config.IFRAME_BODY_SETTIME}}" data-actionurl="__SELF__">
+    <div class="console-container ng-scope">
+        <div class="console-title console-title-border drds-detail-title clearfix">
+            <!-- position  -->
+            <ol class="breadcrumb">
+              <li><i class="icon-home"></i> <a href="/Admin/Index/main">首页</a></li>
+              <volist name="breadcrumbRows" id="vo">
+                <li><a href="/Admin/{{$vo.name}}">{{$vo.title}}</a></li>
+              </volist>
+            </ol>
+            <!-- /position  -->
+        </div>
+        {__CONTENT__}
+    </div>
+</body>
+</html>

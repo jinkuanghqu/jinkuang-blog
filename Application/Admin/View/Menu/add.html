@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-sm-8">
+        <form class="form-horizontal autoBootstrapValidator" name="formData" data-ajax='true'>
+            <div class="form-group">
+                <label for="inputPid" class="col-sm-3 control-label">上级菜单</label>
+                <div class="col-sm-5">
+                    <select name="pid" id="inputPid" class="form-control">
+                        <option value="0">顶级菜单</option>
+                        <volist name='parentRow' id="item">
+                            <if condition="isset($authRuleRow) && $authRuleRow['pid'] == $item['id']">
+                            <option value="{{$item['id']}}" selected="selected">{{$item['title']}}</option>
+                            <else />
+                            <option value="{{$item['id']}}">{{$item['title']}}</option>
+                            </if>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputTitle" class="col-sm-3 control-label">菜单名称</label>
+                <div class="col-sm-5">
+                    <if condition="isset($authRuleRow)">
+                    <input type="text" class="form-control" name="title" value="{{$authRuleRow['title']}}" check-type="required chinese" id="inputTitle" placeholder="菜单名称" />
+                    <else />
+                    <input type="text" class="form-control" name="title" check-type="required chinese" id="inputTitle" placeholder="菜单名称" />
+                    </if>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-3 control-label">菜单链接</label>
+                <div class="col-sm-5">
+                    <if condition="isset($authRuleRow)">
+                    <input type="text" class="form-control" name="name" value="{{$authRuleRow.name}}" data-ajax="{{:U('/Admin/Menu/verifyname',array('id'=>$authRuleRow['id']))}}" id="inputName" check-type="required" placeholder="菜单链接">
+                    <else />
+                    <input type="text" class="form-control" name="name" id="inputName" check-type="required" data-ajax="{{:U('/Admin/Menu/verifyname')}}" placeholder="菜单链接">
+                    </if>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="inputIcon"> ICON图标 </label>
+                <div class="col-sm-5">
+                    <if condition="isset($authRuleRow)">
+                    <input type="text" class="form-control" name="icon" value="{{$authRuleRow.icon}}" id="inputIcon" placeholder="ICON图标">
+                    <else />
+                    <input type="text" class="form-control" name="icon" id="inputIcon" placeholder="ICON图标">
+                    </if>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="inputIslink">是否菜单链接</label>
+                <div class="col-sm-5">
+                    <if condition="isset($authRuleRow) && $authRuleRow['islink'] == 1">
+                    <input type="checkbox" class="form-control input-icheck" checked="checked" name="islink" id="inputIslink" value="1" />
+                    <else />
+                    <input type="checkbox" class="form-control input-icheck" name="islink" id="inputIslink" value="1" />
+                    </if>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="inputSort"> 排序 </label>
+                <div class="col-sm-5">
+                    <if condition="isset($authRuleRow)">
+                    <input type="text" class="form-control " name="sort" value="{{$authRuleRow['sort']}}" id="inputSort" check-type="number" range="0~500" placeholder="ICON图标 越小越靠前">
+                    <else />
+                    <input type="text" class="form-control " name="sort" value="255" id="inputSort" check-type="number" range="0~500" placeholder="ICON图标 越小越靠前">
+                    </if>
+                </div>               
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

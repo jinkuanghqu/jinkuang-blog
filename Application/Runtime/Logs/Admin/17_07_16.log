@@ -1,0 +1,978 @@
+[ 2017-07-16T17:57:06+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+
+[ 2017-07-16T17:57:27+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+ERR: SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+
+
+[ 2017-07-16T18:02:37+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0010','2017-07-16 18:02:37') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:02:49+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0000','2017-07-16 18:02:49') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `admin` WHERE `email` = 'admin@vip.cn' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `admin` WHERE `email` = \'admin@vip.cn\' LIMIT 1  ','0.0010','2017-07-16 18:02:49') [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-16T18:02:53+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0010','2017-07-16 18:02:53') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:02:57+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0000','2017-07-16 18:02:57') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `admin` WHERE `email` = 'admin@vip.cn' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `admin` WHERE `email` = \'admin@vip.cn\' LIMIT 1  ','0.0010','2017-07-16 18:02:57') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:00+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0010','2017-07-16 18:03:00') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:21+08:00 ] 127.0.0.1 /Admin/default/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `auth_rule` WHERE `name` = \'Default/login\' LIMIT 1  ','0.0010','2017-07-16 18:03:21') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `admin` WHERE `email` = 'admin@vip.126.cn' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `admin` WHERE `email` = \'admin@vip.126.cn\' LIMIT 1  ','0.0000','2017-07-16 18:03:21') [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Org\Util\Auth::getAccessList(), called in G:\xampp\htdocs\emallqh\ThinkPHP\Library\Org\Util\Auth.class.php on line 155 and defined G:\xampp\htdocs\emallqh\ThinkPHP\Library\Org\Util\Auth.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: authId G:\xampp\htdocs\emallqh\ThinkPHP\Library\Org\Util\Auth.class.php 第 127 行.
+SQL: SELECT `role_id` FROM `admin` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/login','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0010','2017-07-16 18:03:21') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+SQL: UPDATE `admin` SET `update_time`='1500199401' WHERE `id` = 1 [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `admin_log` (`admin_id`,`admin_name`,`add_time`,`ip`,`log`) VALUES ('1','admin','1500199400','127.0.0.1','登录') [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:22+08:00 ] 127.0.0.1 /admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0010s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.063003s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.063003s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Index/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `name` = \'Index/index\' LIMIT 1  ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0000','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 0 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 0 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 7 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 7 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 14 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 14 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0000','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 62 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 62 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 15 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 15 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 16 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 16 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 17 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 17 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 20 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 20 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 22 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 22 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 238 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 238 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 8 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 8 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 9 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 9 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 10 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 10 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 124 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 124 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 70 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 70 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 84 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 84 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 199 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 199 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 123 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 123 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 125 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 125 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 127 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 127 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0000','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 128 AND `islink` = 1 AND `id` IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','62','70','71','84','85','86','87','123','124','125','126','127','128','129','130','159','199','200','201','202','203','204','238') ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/index','SELECT * FROM `auth_rule` WHERE `pid` = 128 AND `islink` = 1 AND `id` IN (\'7\',\'8\',\'9\',\'10\',\'11\',\'12\',\'13\',\'14\',\'15\',\'16\',\'17\',\'18\',\'19\',\'20\',\'21\',\'22\',\'23\',\'24\',\'25\',\'26\',\'62\',\'70\',\'71\',\'84\',\'85\',\'86\',\'87\',\'123\',\'124\',\'125\',\'126\',\'127\',\'128\',\'129\',\'130\',\'159\',\'199\',\'200\',\'201\',\'202\',\'203\',\'204\',\'238\') ORDER BY sort Asc ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-07-16T18:03:22+08:00 ] 127.0.0.1 /Admin/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0000','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.035002s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Index/main' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `name` = \'Index/main\' LIMIT 1  ','0.0000','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1  ','0.0010','2017-07-16 18:03:22') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:26+08:00 ] 127.0.0.1 /Admin/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Home
+
+[ 2017-07-16T18:03:27+08:00 ] 127.0.0.1 /Admin/Menu/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.044003s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.045003s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Menu/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `name` = \'Menu/index\' LIMIT 1  ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `id` = 8 LIMIT 1  ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 0 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 0 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 7 ORDER BY sort Asc  [ RunTime:0.0020s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 7 ORDER BY sort Asc ','0.0020','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 14 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 14 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 24 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 24 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 62 ORDER BY sort Asc  [ RunTime:0.0020s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 62 ORDER BY sort Asc ','0.0020','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 159 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 159 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 15 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 15 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 16 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 16 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 17 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 17 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 18 ORDER BY sort Asc  [ RunTime:0.0020s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 18 ORDER BY sort Asc ','0.0020','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 19 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 19 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 26 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 26 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 20 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 20 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 22 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 22 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 21 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 21 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 23 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 23 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 238 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 238 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 271 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 271 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 8 ORDER BY sort Asc  [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 8 ORDER BY sort Asc ','0.0030','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 25 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 25 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 9 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 9 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 10 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 10 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 124 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 124 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 70 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 70 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 86 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 86 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 87 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 87 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 84 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 84 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 11 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 11 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 12 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 12 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 13 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 13 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 71 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 71 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 85 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 85 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 199 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 199 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 200 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 200 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 201 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 201 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 202 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 202 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 203 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 203 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 204 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 204 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 61 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 61 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 63 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 63 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 64 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 64 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 65 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 65 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 66 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 66 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 67 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 67 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 69 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 69 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 176 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 176 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 177 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 177 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 178 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 178 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 179 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 179 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 90 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 90 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 114 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 114 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 115 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 115 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 94 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 94 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 95 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 95 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 105 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 105 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 118 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 118 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 119 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 119 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 120 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 120 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 121 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 121 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 122 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 122 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 152 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 152 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 172 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 172 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 173 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 173 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 174 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 174 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 175 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 175 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 123 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 123 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 125 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 125 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 126 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 126 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 127 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 127 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 128 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 128 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 129 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 129 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 130 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 130 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:27') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:28+08:00 ] 127.0.0.1 /Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','User/index','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0000','2017-07-16 18:03:28') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.037002s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.038002s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'User/index' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','User/index','SELECT * FROM `auth_rule` WHERE `name` = \'User/index\' LIMIT 1  ','0.0000','2017-07-16 18:03:28') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 123 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','User/index','SELECT * FROM `auth_rule` WHERE `id` = 123 LIMIT 1  ','0.0010','2017-07-16 18:03:28') [ RunTime:0.0020s ]
+NOTIC: [2048] Declaration of Common\Model\UserModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) G:\xampp\htdocs\emallqh\Application\Common\Model\UserModel.class.php 第 426 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','User/index','SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1  ','0.0000','2017-07-16 18:03:28') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `user` LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','User/index','SELECT * FROM `user` LIMIT 0,20  ','0.0010','2017-07-16 18:03:28') [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-16T18:03:29+08:00 ] 127.0.0.1 /Admin/Menu/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.033002s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.034002s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Menu/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `name` = \'Menu/index\' LIMIT 1  ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `id` = 8 LIMIT 1  ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 0 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 0 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 7 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 7 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 14 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 14 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 24 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 24 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 62 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 62 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 159 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 159 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 15 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 15 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 16 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 16 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 17 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 17 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 18 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 18 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 19 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 19 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 26 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 26 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 20 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 20 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 22 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 22 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 21 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 21 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 23 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 23 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 238 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 238 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 271 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 271 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 8 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 8 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 25 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 25 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 9 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 9 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 10 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 10 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 124 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 124 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 70 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 70 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 86 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 86 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 87 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 87 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 84 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 84 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 11 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 11 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 12 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 12 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 13 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 13 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 71 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 71 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 85 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 85 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 199 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 199 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 200 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 200 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 201 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 201 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 202 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 202 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 203 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 203 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 204 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 204 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 61 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 61 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 63 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 63 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 64 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 64 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 65 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 65 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 66 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 66 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 67 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 67 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 69 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 69 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 176 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 176 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 177 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 177 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 178 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 178 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 179 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 179 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 90 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 90 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 114 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 114 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 115 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 115 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 94 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 94 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 95 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 95 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 105 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 105 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 118 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 118 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 119 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 119 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 120 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 120 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 121 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 121 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 122 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 122 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 152 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 152 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 172 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 172 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 173 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 173 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 174 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 174 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 175 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 175 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 123 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 123 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 125 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 125 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 126 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 126 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 127 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 127 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 128 ORDER BY sort Asc  [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 128 ORDER BY sort Asc ','0.0000','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 129 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 129 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `pid` = 130 ORDER BY sort Asc  [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Menu/index','SELECT * FROM `auth_rule` WHERE `pid` = 130 ORDER BY sort Asc ','0.0010','2017-07-16 18:03:29') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+NOTIC: [8] Array to string conversion G:\xampp\htdocs\emallqh\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 168 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:36+08:00 ] 127.0.0.1 /Admin/Index/main
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0000','2017-07-16 18:03:36') [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.044003s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.045003s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Index/main' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `name` = \'Index/main\' LIMIT 1  ','0.0010','2017-07-16 18:03:36') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1  ','0.0010','2017-07-16 18:03:36') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:42+08:00 ] 127.0.0.1 /Admin/Index/main
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0010','2017-07-16 18:03:42') [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0010s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.035002s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Index/main' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `name` = \'Index/main\' LIMIT 1  ','0.0010','2017-07-16 18:03:42') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1  ','0.0010','2017-07-16 18:03:42') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:03:43+08:00 ] 127.0.0.1 /Admin/Index/main
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `role` WHERE `id` = 6 LIMIT 1  ','0.0010','2017-07-16 18:03:43') [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: mapping_order G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit G:\xampp\htdocs\emallqh\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM role_auth_rule AS a, auth_rule AS b WHERE a.auth_rule_id = b.id AND a. role_id='6' [ RunTime:0.0020s ]
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.046002s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.047003s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Index/main' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `name` = \'Index/main\' LIMIT 1  ','0.0000','2017-07-16 18:03:43') [ RunTime:0.0020s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Index/main','SELECT * FROM `auth_rule` WHERE `id` = 7 LIMIT 1  ','0.0000','2017-07-16 18:03:43') [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-16T18:19:24+08:00 ] 127.0.0.1 /admin/default/loginlock
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/loginlock' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/loginlock','SELECT * FROM `auth_rule` WHERE `name` = \'Default/loginlock\' LIMIT 1  ','0.0010','2017-07-16 18:19:24') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:19:24+08:00 ] 127.0.0.1 /admin/default/loginlock
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/loginlock' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/loginlock','SELECT * FROM `auth_rule` WHERE `name` = \'Default/loginlock\' LIMIT 1  ','0.0010','2017-07-16 18:19:24') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-16T18:19:24+08:00 ] 127.0.0.1 /admin/default/loginlock
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behaviors\LoginBehavior [ RunTime:0.004000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `auth_rule` WHERE `name` = 'Default/loginlock' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sql_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `sql_log` (`module`,`url`,`sql`,`use_time`,`add_time`) VALUES ('Admin','Default/loginlock','SELECT * FROM `auth_rule` WHERE `name` = \'Default/loginlock\' LIMIT 1  ','0.0010','2017-07-16 18:19:24') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: postionFirstRow G:\xampp\htdocs\emallqh\Application\Admin\Model\AuthRuleModel.class.php 第 78 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

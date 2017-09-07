@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-sm-4">
+        <p class="text-primary">每页 <kbd>{{$pages.listRows}}</kbd> 条, 共 <kbd>{{$pages.totalRows}}</kbd> 条记录。当前第 <kbd>{{$pages.now}}</kbd> 页</p>
+    </div>
+    <if condition="!empty($pages['url'])" >
+    <div class="col-sm-8 text-right">
+        <nav>
+          <ul class="pagination">
+
+          <if condition="empty($pages['prev'])">
+            <li class="disabled">
+              <a href="javascript:void(0);" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          <else />
+            <li>
+              <a href="{{$pages['prev']}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          </if>
+
+            <foreach name="pages['url']" item="vo" key="k" >
+            <if condition="empty($vo)">
+               <li class="active"><a href="javascript:void(0);">{{$k}}</a></li>
+             <else />
+                <li><a href="{{$vo}}">{{$k}}</a></li>
+             </if>
+            </foreach>
+           
+            
+          <if condition="empty($pages['next'])">
+            <li class="disabled">
+              <a href="javascript:void(0);" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          <else />
+            <li>
+              <a href="{{$pages['next']}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </if>
+          </ul>
+        </nav>
+    </div>
+    </if>
+</div> 

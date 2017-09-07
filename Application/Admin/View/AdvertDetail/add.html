@@ -1,0 +1,69 @@
+<script type="text/javascript" src="__PUBLIC__/adminTpl/js/bootstrap-typeahead/bootstrap-typeahead.js"></script>
+<script type="text/javascript" src="__PUBLIC__/adminTpl/js/template.js"></script>
+
+<div class="row">
+    <div class="col-sm-10">
+        <form class="form-horizontal autoBootstrapValidator" name="formData" data-ajax='true'>
+           
+            <div class="form-group">
+                <label for="inputTitle" class="col-sm-3 control-label">调用类型</label>
+                <div class="col-sm-5">                   
+                    <select name="web_call_id" check-type="required number" number-message="请选择调用位置" class="form-control">
+                        <option>请选择</option>
+                        <volist name="webCallRows" id="vo">
+                        <if condition="$webCallDetailRow['web_call_id'] == $vo['id']">
+                        <option value="{{$vo.id}}" selected="selected">{{$vo.name}}</option>
+                        <else />
+                        <option value="{{$vo.id}}">{{$vo.name}}</option>
+                        </if>
+                        </volist>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputTitle" class="col-sm-3 control-label">标题</label>
+              <div class="col-sm-5">
+                <input type="text" value="{{$webCallDetailRow.title}}" class="form-control input-value-4-input" name="title" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputTitle"  class="col-sm-3 control-label">链接</label>
+              <div class="col-sm-5">
+                <input type="text" value="{{$webCallDetailRow.href}}" class="form-control input-value-4-input" name="href" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputTitle" class="col-sm-3 control-label">图片</label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <textarea class="form-control input-file-text input-value-4-input" name="image">{{$webCallDetailRow.image}}</textarea>
+                  <span class="input-group-btn">
+                    <input type="file" class="btn-input-file" data-ext="/(\.jpg|\.png|\.gif)$/" />
+                    <button class="btn btn-success" type="button">上传</button>
+                  </span>
+                </div><!-- /input-group -->
+                
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputTitle" class="col-sm-3 control-label">排序</label>
+                <div class="col-sm-5">
+                  <input type="text" name="sort" class="form-control" value="{{$webCallDetailRow['sort']}}" range="0~100" check-type="required number"/>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">                    
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

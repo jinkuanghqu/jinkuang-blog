@@ -1,0 +1,104 @@
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse">
+                    <i class="bigger-110 icon-down"></i>
+                    推荐分类列表
+                </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div><a href="javascript:void(0);" onclick="add()" class="btn btn-success" style="margin-left:5px">添加</a></div>
+
+                <table class="table table-hover" style="margin-left:5px !important">
+                    <thead>
+                        <tr>
+                            <td>序号</td>
+                            <th class="center">推荐分类名称</th>
+                            <th class="center">分类描述</th>
+                            <th class="center">分类ID</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <volist name="sdcategory_list" id="item">
+                                <tr>
+                                    <td>{{$key+1}}</td>
+                                    <td>{{$item['name']}}</td>
+                                    <td>{{$item['desc']}}</td>
+                                    <td>{{$item['id']}}</td>
+                                    <td>
+                                     <div class="left">
+                                        <span><a class="btn btn-sm btn-success" href="{{:U('/Admin/Sdcategory/products', array('id' => $item['id']))}}">商品列表</a></span>
+                                        <span><a class="btn btn-sm btn-primary" href="javascript:void(0)"  onclick="edit({{$item['id']}})">编辑</a></span>
+                                        <!--<span><a class="btn btn-sm btn-danger" href="javascript:void(0)"  onclick="drop({{$item['id']}})">删除</a></span>-->
+                                    </div>
+                                 </td>
+                                </tr>
+                            </volist>
+                    </tbody>
+                </table>
+                <include file="Common/page" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    td{
+        overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+    }
+</style>
+
+<script>
+
+</script>
+
+<script language="javascript">
+
+function edit(sdcategory_id)
+{
+    $.get("{{:U('/Admin/Sdcategory/edit')}}", {'id': sdcategory_id}, function(data, status){
+        if(true){
+            var d = dialog({
+                title: '编辑推荐分类',
+                content: data,
+                width: 500,
+                drag: true,
+            });
+            d.show();
+        }
+    });
+} 
+
+function add()
+{
+    $.get("{{:U('/Admin/Sdcategory/add')}}", function(data, status){
+        if(true){
+            var d = dialog({
+                title: '添加推荐分类',
+                content: data,
+                width: 400,
+                drag: true,
+            });
+            d.show();
+        }
+    });
+}
+
+function drop(sdcategory_id){
+    parent.layer.confirm( '您确定要删除这条数据吗？', {
+        btn: [ '确定', '取消' ],
+        skin: 'layer-ext-moon'
+    },function( index ) {
+        $.get("{{:U('/Admin/Sdcategory/drop')}}", {id:sdcategory_id}, AjaxRequest, 'json' );
+        parent.layer.close( index );
+    }, function() {
+
+    } );
+}
+</script>

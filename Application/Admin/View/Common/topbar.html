@@ -1,0 +1,54 @@
+    <div class="aliyun-console-topbar ng-isolate-scope">
+        <div class="topbar-wrap topbar-clearfix">
+            <div class="topbar-head topbar-left"><a href="javasrcipt:;" onclick="mainFrame.window.location.reload();" class="topbar-logo topbar-left"><span class="icon-oas-2"></span></a> <a href="__SELF__" target="_self" class="topbar-home-link topbar-btn topbar-left" ><span class="ng-binding">管理控制台</span></a>
+            </div>
+            
+            <div class="topbar-info topbar-right topbar-clearfix">
+               
+              <!--  <div class="dropdown topbar-notice topbar-btn topbar-left ng-scope" ><a href="javasrcipt:;" class="dropdown-toggle topbar-btn-notice"><span class="topbar-btn-notice-icon icon-bell"></span> <span class="topbar-btn-notice-num ng-binding">1</span></a>
+                    <div class="topbar-notice-panel">
+                        <div class="topbar-notice-arrow"></div>
+                        <div class="topbar-notice-head"><span class="ng-binding">站内消息通知</span></div>
+                        <div class="topbar-notice-body">                            
+                            <ul class="ng-scope">                                
+                                <li class="ng-scope">
+                                    <a target="_blank" class="clearfix" href="javasrcipt:;"><span class="inline-block"><span class="topbar-notice-link ng-binding">【重要通知】阿里云推荐码限量开放申请中，分享9折推荐码，获10%返利！</span> <span class="topbar-notice-time ng-binding">2015-10-23</span></span>
+                                        <span class="inline-block topbar-notice-class ng-scope"><span class="topbar-notice-class-name ng-binding">优惠活动</span></span>
+                                        
+                                    </a>
+                                </li>
+                               end ngRepeat: item in messages.messageList 
+                            </ul>
+                            end ngIf: messages && messages.messageList.length >0 
+                             ngIf: !messages ||  messages.messageList.length == 0 
+                        </div>
+                        <div class="topbar-notice-foot"><a class="topbar-notice-more ng-binding" target="_blank" ng-href="#" aliyun-console-spm="401" data-spm-click="gostr=/aliyun;locaid=d401;;" href="javasrcipt:;">查看更多</a></div>
+                    </div>
+                </div>-->
+                
+                <div class="topbar-left topbar-accesskeys topbar-info-item ng-scope">
+                    <a href="javasrcipt:;" data-url="{{:U('Admin/Index/clearCache')}}" class="topbar-btn ng-binding delete">清理缓存</a>
+                </div>
+          
+                <div class="topbar-left ng-scope">
+                    <div id='loginOut' class="dropdown topbar-info-item">
+                        <a href="javasrcipt:;" class="dropdown-toggle topbar-btn">
+                            <span class="ng-binding">{{$adminRow.name}}[{{$adminRow.email}}]</span>
+                            <span class="icon-arrow-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- ngRepeat: link in navLinks.user.links -->
+                            <li class="topbar-info-btn ng-scope">
+                                <a href="{{:U('admin/default/logout')}}" target="_self"><span class="ng-binding">退出</span></a>
+                            </li>
+                            <!-- end ngRepeat: link in navLinks.user.links -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- end ngIf: navLinks.user.show -->
+                <!-- 国际化 -->
+                <!-- ngIf: navLinks.i18n.show && navLinks.i18n.currentLanguage -->
+            </div>
+            <!-- ngIf: navLinks.assist.show && helpConfig -->
+        </div>
+    </div>

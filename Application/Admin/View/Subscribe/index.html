@@ -1,0 +1,83 @@
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse">
+                    <i class="bigger-110 icon-down"></i>
+                    订阅列表搜索
+                </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form class="form-inline" method="get" action="{{:U('Subscribe/index')}}">
+                    <div class="form-group">
+                        <input class="form-control" name="email" placeholder="邮箱" value="{{:I('get.email')}}">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="activation">
+                            <option value="">状态</option>
+                            <php>foreach($activeStatus as $key => $val) {</php>
+                            <option value="{{$key}}" <php>echo $key.''===I('get.activation')?'selected':''</php>>{{$val}}</option>
+                            <php>}</php>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-info">搜索</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse">
+                    <i class="bigger-110 icon-down"></i>
+                    订阅列表
+                </a>
+            </h4>
+        </div>
+        <div class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="panel-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="center">
+                                    <input type="checkbox" onchange="javascript:$('.check-all').prop('checked',$(this).prop('checked'))">
+                                </th>
+                                <th class="center">邮箱</th>
+                                <th class="center">状态</th>
+                                <th class="center">添加时间</th>
+                                <th class="center">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <php>if ($subscribeList) {
+                                foreach($subscribeList as $subscribeNum => $subscribeRow) {</php>
+                                    <tr class="info">
+                                        <td>
+                                            <input class="check-all" name="id[]" type="checkbox" value="{{$subscribeRow.id}}">
+                                        </td>
+                                        <td>{{$subscribeRow.email}}</td>
+                                        <td><span class="label <php>echo $subscribeRow[activation]?'label-info':'label-default'</php> ">{{$activeStatus[$subscribeRow[activation]]}}</span></td>
+                                        <td>{{$subscribeRow.add_time|date = 'Y-m-d H:i:s',###}}</td>
+                                        <td>
+                                            <a href="javascript:void(0);" data-ajax="{{:U('Subscribe/destroy',array('id'=>$subscribeRow[id]))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                        </td>
+                                    </tr>
+                                <php>}
+                            }</php>
+                        </tbody>
+                    </table>
+                    <div class="col-sm-12">
+                        <button class="btn btn-info ajax-destroy-all" type="submit" data-url="/Admin/Subscribe/destroy" data-class="check-all">删除</button>
+                    </div>
+                </div>
+
+                <include file="Common/page" />
+            </div>
+        </div>
+    </div>
+</div>

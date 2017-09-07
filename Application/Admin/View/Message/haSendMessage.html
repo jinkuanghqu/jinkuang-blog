@@ -1,0 +1,86 @@
+<div class="console-container ng-scope">
+
+    <div bindonce="" class="ng-scope">
+    
+        <div class="clear10"></div>
+        <div class="ng-isolate-scope mt50">
+            <div class="ng-scope">
+                <div class="searchSection">
+                </div>
+                <div class="gridSection">
+                        <table class="table table-hover" id="tab">
+                            <thead>
+                                <tr>
+                                    <!-- <th width="10">
+                                        <input onclick="if(this.checked==true) { checkAll('id'); } else { clearAll('id'); }" type="checkbox" value="" name="id" title="全选/取消" class="ng-valid ng-dirty check-all" />
+                                    </th>
+                                    <th  class="center">用户UID</th> -->
+                                    <th  class="center">编号</th>
+                                    <th  class="center">消息标题</th>
+                                    <th  class="center">收件人</th>                                    
+                                    <th  class="center">发送时间</th>
+                                    <th  class="contact-th center">状态</th>
+                                    <th  class="contact-th center">操作</th>
+                                    
+                                </tr>
+                         </thead>
+                            <tbody>
+                         
+                            <foreach name="haSendMessage" item="vo" >
+                                    <tr class="ng-scope">
+
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.id}}</span></div>
+                                        </td>
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.title}}</span></div>
+                                        </td>  
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.sendee}}</span></div>
+                                        </td>                                          
+                                        <td>
+                                            <div class="center"><span class="ng-binding">{{$vo.send_time|date='Y-m-d H:i:s',###}}</span></div>
+                                        </td>
+                                        <td>
+                                            {{$vo.msg_status}}
+                                        </td>
+                                        <td>
+                                            <div class="left">
+                                            
+                                          <a class="btn btn-sm btn-success" href="javascript:void(0)" onclick = "messageContent({{$vo.id}})">查看内容</a>
+                                                
+                                                <!--<a href="#" onclick="confirm('确认删除？')">[删除]</a>-->
+                                            </div>
+                                        </td>                                        
+                                    </tr>
+                            </foreach>							 
+                            </tbody>
+                        
+                        </table>
+                        <include file="Common/page" />
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="javascript">
+
+function messageContent(id)
+{
+
+    $.get("{{:U('/Admin/Message/messageContent')}}", {'id': id}, function(data, status){
+        if(true){
+            var d = dialog({
+                title: '消息内容',
+                content: data,
+                width: '800px',
+                drag: true,
+            });
+            d.show();
+        }
+    });
+} 
+
+</script>

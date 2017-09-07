@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;推荐分类商品列表 分类: {{$sdCategoryRow['name']}} | 首页显示: &nbsp;<kbd>{{$sdCategoryRow['max_number']}}</kbd> 个
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/Goods/iframe')}}" class="btn btn-success ajax-open-iframe">添加商品</a>
+                        </div>
+                        <form action="{{:U('/Admin/Sdcategory/destroyProduct')}}" class="form-horizontal checkbox-del">
+                            <div class="col-sm-12">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"><input class="check-all" type="checkbox" value=""></th>
+                                            <th class="center">商品名称</th>
+                                            <th class="center">商品SPU</th>
+                                            <th class="center">总库存</th>
+                                            <th class="center">最低单价</th>
+                                            <th class="center">排序</th>
+                                            <th class="center">商品状态</th>
+                                            <th class="center">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <volist name="goodsRows" id="vo">
+                                           <tr>
+                                               <td><input class="ids" type="checkbox" name="id[]" value="{{$vo.id}}"></td>
+                                               <td>{{$vo.name}}</td>
+                                               <td>{{$vo.spu}}</td>
+                                               <td>{{$vo.stock}}</td>
+                                               <td>{{$vo.price}}</td>
+                                               <td><input type="number" name="sort" data-id="{{$vo.id}}" value="{{$vo.sort}}" min="0" max="127" style="width:80px"/></td>
+                                               <td>
+                                               <if condition="$vo.status == 1">
+                                                    <span class="label label-success">上架</span>
+                                                   <else />
+                                                    <span class="label label-danger">下架</span>
+                                               </if>
+                                               </td>
+                                               <td>
+                                                    <a href="javascript:void(0);" data-ajax="{{:U('/Admin/Sdcategory/destroyProduct',array('id'=>$vo['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                               </td>
+                                           </tr>
+                                       </volist>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-12">
+                                <button class="btn btn-info" type="submit">删除</button>
+                            </div>
+                        </form>
+                    </div>
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var sdCategoryId = {{$sdCategoryId}};
+
+$(function () {
+    $('.ajax-open-iframe').bind('click',function (e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+         parent.layer.open({
+            type: 2,
+            title: 'layer mobile页',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['80%', '90%'],
+            content: url //iframe的url
+        });
+    });
+     
+})
+
+
+function product (argument) {
+     var data = {
+            sdcategory_id : sdCategoryId,
+            goods_id : argument.id
+        };
+    $.post('/Admin/Sdcategory/addProduct', data , AjaxRequest,'json');
+}
+
+$(document).ready(function(){
+    $("input[name='sort']").change(function(){
+        var sort = $(this).val();
+        var id   = $(this).attr('data-id');
+
+        $.post("/Admin/Sdcategory/editProduct", {'sort':sort,'id':id}, function(xdata){
+            console.log(xdata);
+            if (xdata.status==1){
+                parent.layerSuccess(xdata.info);
+            } else {
+                parent.layerError(xdata.info);
+            }
+        });
+    });
+});
+</script>
+

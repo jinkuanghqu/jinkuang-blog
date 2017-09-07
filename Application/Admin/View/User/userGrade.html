@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="panel-group col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse">
+                        <i class="bigger-110 icon-down"></i>
+                        &nbsp;会员等级列表
+                    </a>
+                </h4>
+            </div>
+
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row panel-scroll">
+                        <div class="col-sm-12">
+                            <a href="{{:U('/Admin/User/userGradeAddModify')}}" class="btn btn-success ajax-add-iframe">添加</a>
+                        </div>
+                        <form action="{{:U('/Admin/User/gradeDestroy')}}" class="form-horizontal checkbox-del">
+                            <div class="col-sm-12">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"><input class="check-all" type="checkbox" value=""></th>
+                                            <th class="center">等级名称</th>
+                                            <th class="center">等级logo</th>
+                                            <th class="center">所需评分</th>
+                                            <th class="center">所需金额</th>
+                                            <th class="center">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <volist name="userGradeRows" id="userGradeRow">
+                                        <tr class="info">
+                                            <td><input class="ids" type="checkbox" name="id[]" value="{{$userGradeRow.id}}"></input></td>
+                                            <td>{{$userGradeRow.grade_name}}</td>
+                                            <td><img src="{{$userGradeRow.grade_logo|P=###}}" style="max-height: 50px; max-width: 50px;" /></td>
+                                            <td>
+                                                {{$userGradeRow.compound_points}}
+                                            </td>
+                                            <td>{{$userGradeRow.min_total_order_amount}}</td>
+                                            <td>
+                                                <a href="{{:U('User/userGradeAddModify',array('id'=>$userGradeRow['id']))}}" class="btn btn-sm btn-info">修改</a>
+                                                <a href="javascript:void(0);" data-ajax="{{:U('User/gradeDestroy',array('id'=>$userGradeRow['id']))}}" class="btn btn-sm btn-danger ajax-destroy">删除</a>
+                                            </td>
+                                        </tr>
+                                        </volist>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </form>
+                    </div>
+                    <include file="Common/page" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+create database cobar;
+
+create database cobar_1;
+
+create database cobar_2;
+
+create database cobar_3;
+
+create database cobar_4;
+
+create user cobar  IDENTIFIED by '*D4345DFjjDDjioEOR';
+set password for cobar=password('*D4345DFjjDDjioEOR');
+grant all on cobar.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+grant all on cobar_1.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+grant all on cobar_2.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+grant all on cobar_3.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+grant all on cobar_4.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+
+grant all on shopping1.* to cobar@"%" Identified by "*D4345DFjjDDjioEOR";
+flush privileges;

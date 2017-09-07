@@ -1,0 +1,98 @@
+<include file="Common/indexHeader"/>
+<script type="text/javascript">
+$(function(){
+    var topMenuDom = $("#topMenuList").find("a.active");
+    var leftMenuDom = $("#leftMenuList").find("li.active").find("span");
+    var topContent = topMenuDom.html()? ' &gt; '+topMenuDom.html():'';
+    var topContentHref = topMenuDom.attr('href')?topMenuDom.attr('href'):'';
+    var leftContenct = leftMenuDom.html()?' &gt; '+leftMenuDom.html():'';
+    var leftContenctHref = leftMenuDom.attr('href')?leftMenuDom.attr('href'):'';
+    $('#topMenuSec').html(topContent).attr('href',topContentHref);
+    $('#topMenuThir').html(leftContenct).attr('href',leftContenctHref);
+});
+</script>
+<!--注意：会员中心 nav 结构和样式 与登录前不同-->
+<div class="navContainer memNav">
+    <div class="min_width clearfix nav_width" id="topMenuList">
+        <p class="f_left">
+            <a href="{{$topMenu['My SinoB2B']}}" class="catNav <php>echo $topType=='My SinoB2B'?'active':''</php>">My SinoB2B</a></p>
+        <ul class="f_left clearfix">
+            <php>if ($topMenu) {
+                foreach ($topMenu as $menuKey => $menu) {
+                    if ($menuKey != 'My SinoB2B') {</php>
+                    <li><a href="{{$menu}}" class="<php>echo $menuKey==$topType?'active':''</php>">{{$menuKey}}</a></li>
+                <php>}
+                }
+            }</php>
+        </ul>
+    </div>
+</div>
+<!--订单列表-->
+<div class="memberContainer">
+    <!-- 个人主页-->
+    <div class="homeContainer">
+        <php>if (!in_array('/'.$Think.CONTROLLER_NAME.'/'.$Think.ACTION_NAME,$withoutMenu)) {</php>
+            <div class="min_width">
+                <div class="breadNavContainer">
+                    <p class="min_width">
+                        <a href="javascript:" >Home</a>
+                        <a href="javascript:" id="topMenuSec"></a>
+                        <a href="javascript:" id="topMenuThir" class="active"></a>
+                    </p>
+                </div>
+                <!--主要部分内容-->
+                <!-- 左侧导航-->
+                <div class="mainBox clearfix ">
+                    <div class="m-col-l f_left width240">
+                    <div class="navCol" id="leftMenuList">
+                        <php>if ($leftMenu) {
+                            foreach ($leftMenu as $menuKey => $menu){</php>
+                                <div class="navGroup">
+                                    <p class="dt">{{$menuKey}}</p>
+                                    <div class="dl">
+                                        <php>if (is_array($menu)) foreach($menu as $listKey => $listRow){</php>
+                                            <li class="<php>echo in_array('/'.$Think.CONTROLLER_NAME.'/'.$Think.ACTION_NAME,$listRow)?'active':''</php>">
+                                                <a href="{{$listRow[0]}}"><i class="leftIcon"></i><span>{{$listKey}}</span></a>
+                                            </li>
+                                        <php>}</php>
+                                    </div>
+                                </div>
+                            <php>}
+                        }</php>
+                        </div>
+                    </div>
+                    {__CONTENT__}
+                </div>
+            </div>
+        <php>} else {</php>
+            {__CONTENT__}
+        <php>}</php>
+    </div>
+</div>
+<!--主体部分-->
+
+<div class="sloganContainer">
+    <div class="min_width clearfix">
+        <li>
+            <p class="icon icon1"><i></i></p>
+            <p class="margin_top8"><strong class="text">Authenticity Guarantee</strong></p>
+        </li>
+        <li>
+            <p class="icon icon2"><i></i></p>
+            <p class="margin_top8"><strong class="text">China Brand</strong></p>
+        </li>
+        <li>
+            <p class="icon icon3"><i></i></p>
+            <p class="margin_top8"><strong class="text">Transaction Security</strong></p>
+        </li>
+        <li style="border-right: none">
+            <p class="icon icon4"><i></i></p>
+            <p class="margin_top8"><strong class="text">Massive Brand</strong></p>
+        </li>
+    </div>
+</div>
+<!-- footer-->
+<include file="Common/indexFooter"/>
+
+</body>
+</html>

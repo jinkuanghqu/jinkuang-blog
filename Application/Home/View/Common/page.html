@@ -1,0 +1,40 @@
+<if condition="!empty($pages['url'])" >
+<div class="pageBtn" id="pageBtn">
+        <if condition="empty($pages['prev'])" >
+            <a href="javascript:void(0);" class="prev">&lt;</a>
+        <else/>
+            <a href="{{$pages['prev']}}" class="prev">&lt;</a>
+        </if>
+
+        <foreach name="pages['url']" item="vo" key="k">
+            <if condition="empty($vo)" >
+                <a href="javascript:void(0);" class="cur">{{$k}}</a>
+            <else/>
+                <a href="{{$vo}}">{{$k}}</a>
+            </if>
+        </foreach>
+
+        <if condition="empty($pages['next'])" >
+            <a href="javascript:void(0)" class="next">&gt;</a>
+        <else/>
+            <a href="{{$pages['next']}}" class="next">&gt;</a>
+        </if>
+
+        <input type="text" class="textPager" id="input-gotoPage" placeholder="Go to Page">
+        <a id="btn-gotoPage" class="submit" href="javascript:">Go</a>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#btn-gotoPage").click(function(){
+        var inputPage = parseInt($("#input-gotoPage").val());
+        $("#btn-gotoPage").parent().children("a").each(function(){
+            var pageNum = $(this).html();
+            if(inputPage == pageNum){
+                window.location.href = $(this).attr('href');
+            }
+        })
+    });
+});
+</script>
+</if>

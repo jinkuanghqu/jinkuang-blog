@@ -1,0 +1,8 @@
+<notempty name="newArticleData">
+    <div class="widget">
+        <h4 class="title">最新文章</h4>
+        <volist name="newArticleData" id="vo">
+            <a href="{{:U('home/article/details/id/'.$vo['id'])}}" class="btn btn-default btn-block" target="_blank">{{$vo.title}}</a> 
+        </volist>
+    </div>
+</notempty>

@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(248,248,248);
+    /*background-color: lightgray;*/
+}
+.img_avatar{
+    border-radius: 200px;
+    width: 48px;
+}
+.integral_num{
+    font-size: large;
+    color: red;
+}
+.productImg{
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.page-hd{
+    margin: 30px;
+ 
+}
+.page-hd-title h1{
+    font-size: larger;
+    font-weight: 550
+}
+
+
+/*user info*/
+.user_info{
+    padding: 10px;
+    box-sizing: border-box;
+    height:  70px;
+    background-color: white;
+}
+.user_info-hd{
+    display: inline-block;
+}
+
+
+.user_info-bd{
+    display: inline-block;
+}
+
+#integralIcon{
+    width: 22px;
+}
+.user_info-footer{
+float: right;
+margin: 10px;
+}
+.user_info-footer a ::after{
+    content: ">"
+}
